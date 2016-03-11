@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: RWX 
+title: RWX
 subtitle: Read Write Execute
 description: This is a written down account of my journey toward coding Zen
 author: Nana Adane
@@ -78,8 +78,10 @@ disqus_shortname: readwriteexecute
 
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
+plugins:
+- hexo-generator-cname
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: apollo 
+theme: apollo
 exclude_generator:
 
 # Deployment
@@ -87,4 +89,3 @@ exclude_generator:
 deploy:
   type: git
   repo: https://github.com/v3rse/v3rse.github.io.git
-

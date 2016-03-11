@@ -1,13 +1,13 @@
 title: In the beginning..
 date: 2014-09-25 00:25:55
-tags:
+tags: thoughts
 ---
 
 A taste of blogging
 -------------------
-<!--more-->
-So here I am in the middle of the night creating my first statically generated blog. I never got a hang of blogging (before this). I tried using many platforms. [Blogger](http://jackof1trade.blogspot.com/), [Tumblr](http://w-r-x.tumblr.com/) (I must admit my Tumblr blog loooked the coolest), Wordpress and even Medium but they never allowed me to type in [Vim](http://vim-adventures.com/) as I am now :p. Basically what I did here was to get [Hexo](http://hexo.io/) installed, figured out how to get themes for it and finally how to write post and deploy. 
-<!--more-->
+
+So here I am in the middle of the night creating my first statically generated blog. I never got a hang of blogging (before this). I tried using many platforms. [Blogger](http://jackof1trade.blogspot.com/), [Tumblr](http://w-r-x.tumblr.com/) (I must admit my Tumblr blog loooked the coolest), Wordpress and even Medium but they never allowed me to type in [Vim](http://vim-adventures.com/) as I am now :p. Basically what I did here was to get [Hexo](http://hexo.io/) installed, figured out how to get themes for it and finally how to write post and deploy.
+
 
 Why am I blogging NOW?
 ----------------------
@@ -23,4 +23,3 @@ __Update__
 `A good tutorial can be found` [here](http://plaintext-productivity.net/2-04-how-to-set-up-sublime-text-for-markdown-editing.html) `try it out!`
 
 __Happy Coding__
-

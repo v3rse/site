@@ -1,5 +1,5 @@
 title: "Yo Just Chill!!"
-tags: open source
+tags: snippets open source
 date: 2014-11-21 11:18:43
 ---
 
