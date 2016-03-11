@@ -13,7 +13,7 @@ TLDR: Christ is Steph Curry's ID and mine as well
 
 A bit of a primer
 ---
-For those who don't know him too well Steph Curry's pretty much the best 3 point shooter in the NBA right now and playing with one of the hardest working teams in the NBA right now, __IMHO__, the Golden State Warriors.
+For those who don't know him too well Steph Curry's pretty much the best 3 point shooter in the NBA  and playing with one of the hardest working teams in the NBA right now, __IMHO__, the Golden State Warriors.
 
 It wasn't always like that for him though. Although he came from a family of highly athletic people (NBA player Dell Curry who was also a great shooter, a mom who played college volleyball and younger siblings who are excelling in their own sports careers), he was rejected by the some of the top college teams after high school because they thought his small frame wasn't what they wanted in a star point guard(sound familiar? Hint: David).
 <!-- more -->
@@ -51,7 +51,7 @@ After all the __hard work, honor, humility__ and __heart__, I see someone who he
 
 What does all this even mean
 ---
-I love basketball and I love Steph Curry but really the greatest effect he's had on me is to make question my identity in Christ.
+I love basketball and I love Steph Curry but really the greatest effect he's had on me is to make me question my identity in Christ.
 
 I asked myself whether I was really laying it all out there for the one who has bought me with his own blood. Growing up I've always wanted to be like someone I saw on TV, someone I had read of in a book or met in life that inspired me. These people aren't necessarily bad but I came to depend on these different role models for my identity as a person.
 
