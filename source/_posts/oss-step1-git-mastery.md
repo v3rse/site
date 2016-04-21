@@ -113,7 +113,7 @@ git checkout new-file-feature
 
 #Write some code and commit
 touch new-file.txt
-echo Starts out in only 'new-file-feature branch' > new-file.txt
+echo "Starts out in only 'new-file-feature branch'" > new-file.txt
 git add new-file.txt
 git commit -m "Add a new file"
 {% endcodeblock %}
@@ -145,7 +145,7 @@ vim hello.txt
 
 You should see something like
 
-{% codeblock lang:sh %}
+{% codeblock lang:txt %}
 Hello, world!
 <<<<<<< HEAD
 Hi I was changed in master
@@ -157,7 +157,7 @@ Hi I was added in the new-file-feature branch
 
 Edit to look the way you want
 
-{% codeblock lang:sh %}
+{% codeblock lang:txt %}
 Hello, world!
 Hi I was changed in master
 Hi I was added in the new-file-feature branch
@@ -176,7 +176,7 @@ git log
 #Hit the 'q' to exit
 
 #Checkout the specific commit
-git checkout 92225e88
+git checkout '92225e88'
 {% endcodeblock %}
 
 This prints out a helpful message:
@@ -220,18 +220,19 @@ There are two ways of making this happen:
 
 * `reset` is for changes that haven't been pushed to a remote repository yet.
 
-{% codeblock lang:sh %}
-git reset --hard 92225e88
-{% endcodeblock %}
+  {% codeblock lang:sh %}
+  git reset --hard "92225e88"
+  {% endcodeblock %}
 
-Doing this on pushed changes will cause the shared history of the project to change.
+  Doing this on pushed changes will cause the shared history of the project to change.
 
 * `revert` is for changes that have been pushed to a remote server.
 
-{% codeblock lang:sh %}
-git revert 92225e88
-{% endcodeblock %}
-This creates a commit that removes all changes in the specified commit.
+  {% codeblock lang:sh %}
+  git revert "92225e88"
+  {% endcodeblock %}
+
+  This creates a commit that removes all changes in the specified commit.
 
 __Finally I'm done with my changes. Let's share it with the world__
 
@@ -274,7 +275,7 @@ git commit -a -m "<some message>"
 git checkout -b <new-branch-name>
 {% endcodeblock %}
 
-I'll be writing later on the differences between `fetch` and `push` later as well as the mysteries `rebase` and  **squash**.
+I'll be writing later on the differences between `fetch` and `push` later as well as the mysteries `rebase` and  **squashing**.
 
 GUI Tools
 ---
