@@ -1,4 +1,4 @@
-title: Learn React: Stage 1 - The Official Tutorial
+title: Learn React - Stage 1 - The Official Tutorial
 tags: journal
 ---
 ![react](http://formatjs.io/img/react.svg)

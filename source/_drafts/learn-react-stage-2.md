@@ -1,4 +1,4 @@
-title: Learn React: Stage 2 - Learn Webpack (and about CommonJS)
+title: Learn React - Stage 2 - Learn Webpack (and about CommonJS)
 tags: journal
 ---
 ![webpack](https://cdn-images-1.medium.com/max/2000/1*A-_KrEvMuiH7dlwshFw5aw.png)

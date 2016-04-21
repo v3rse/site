@@ -1,8 +1,6 @@
-title: 'A journey into Open Source [Step 1 - Git Mastery]'
+title: A journey into Open Source [Step 1 - Git Mastery]
 tags: journal
-date: 2016-04-21 03:20:03
 ---
-
 
 Git: The intro
 ===
@@ -49,7 +47,8 @@ Getting My Hands Dirty
  __I have a project I want to be 'versioned' using `git`__.
 
 Easy!
-```
+
+{% codeblock lang:sh %}
 #Setup git
 git config --global user.name "Nana Adane"
 git config --global user.email "nanaofosuheneadane@gmail.com"
@@ -59,31 +58,31 @@ cd git-test
 
 #And run
 git init
-
-```
+{% endcodeblock %}
 
 __What if someone gave me a link to a project I want to contribute to?__
 
-```
+{% codeblock lang:sh %}
 #Clone the repository.
 git clone <the-link>
 #N/B:This gets all the history pertaining to this project
-```
+{% endcodeblock %}
 
 __I want to see what's happening with my repository__
-```
+
+{% codeblock lang:sh %}
 #Check the status of the repository
 git status
-```
+{% endcodeblock %}
 This prints out some helpful stuff about your repo like:
-```
+{% codeblock lang:sh %}
 On branch master
 nothing to commit, working directory clean
-```
+{% endcodeblock %}
 
 __I have a project. How do I add stuff?__
 
-```
+{% codeblock lang:sh %}
 #Create a file
 touch hello.txt
 echo 'Hello,World' > hello.txt
@@ -94,7 +93,7 @@ git add hello.txt
 #Commit it
 git commit -m 'Add new file'
 #N/B: It's a common convention to use presence when writing commit messages
-```
+{% endcodeblock %}
 
 __I want to create a new feature in my project__
 
@@ -102,11 +101,11 @@ __I want to create a new feature in my project__
 
 Conventionally new features to a project are created in a branch. Feature branches are then merged into the master branch after testing and then deleted. `Git` allows us to do this quickly and easily because now files are actually copied.
 
-```
+{% codeblock lang:sh %}
 #Create new branch
 git branch new-file-feature
 
-#List current branches. The branch you're on is indicated by '*'
+#List current branches. The branch you're on is indicated by *
 git branch
 
 #Checkout/switch to the branch you created
@@ -117,48 +116,52 @@ touch new-file.txt
 echo Starts out in only 'new-file-feature branch' > new-file.txt
 git add new-file.txt
 git commit -m "Add a new file"
-```
+{% endcodeblock %}
 
 __Oh no! I have conflict. How do I merge?__
 
 A conflict occurs when two or more sets of changes are made to the same file. For `git` this usually happens when you attempt to merge changes from two branches that have changes to the same files. A merge copies nodes of the tree contained within a branch into another branch. Conflicts can be resolved manually by editing the file in conflict and committing it.
 
-```
+{% codeblock lang:sh %}
 #Let's assume I also made a change to the original hello.txt file within the new branch create previously
 #To merge changes to my master branch
 git checkout master
 git merge new-file-feature
-```
+{% endcodeblock %}
 
 You should get a message like
 
-```
+{% codeblock lang:sh %}
 Auto-merging hello.txt
 CONFLICT (content): Merge conflict in hello.txt
-```
+{% endcodeblock %}
 
 To resolve the conflict
-```
+
+{% codeblock lang:sh %}
 #Open the file in an editor
 vim hello.txt
-```
+{% endcodeblock %}
 
 You should see something like
-```
+
+{% codeblock lang:sh %}
 Hello, world!
 <<<<<<< HEAD
 Hi I was changed in master
 =======
 Hi I was added in the new-file-feature branch
 >>>>>>> new-feature-branch
-```
+
+{% endcodeblock %}
 
 Edit to look the way you want
-```
+
+{% codeblock lang:sh %}
 Hello, world!
 Hi I was changed in master
 Hi I was added in the new-file-feature branch
-```
+{% endcodeblock %}
 N/B: Your conflicts may span multiple lines
 
 
@@ -167,17 +170,18 @@ __I want to go back in time and try some stuff__
 
 `Git` keeps a log of all commits. It keeps SHA references to each commit. This idea for jumping back to previous commit.
 
-```
+{% codeblock lang:sh %}
 #List all previous commits. Copy the reference
 git log
 #Hit the 'q' to exit
 
 #Checkout the specific commit
 git checkout 92225e88
-```
+{% endcodeblock %}
+
 This prints out a helpful message:
 
-```
+{% codeblock lang:txt %}
 Note: checking out '92225e88'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -190,10 +194,11 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b new_branch_name
 
 HEAD is now at 92225e8... Add line to hello.txt
-```
+{% endcodeblock %}
+
 A **detached HEAD state** basically means that the work space is currently not pointing to any container for commits (a branch). This means that if you checkout a branch you'll lose all commits made here.
 
-```
+{% codeblock lang:txt %}
 Warning: you are leaving 1 commit behind, not connected to
 any of your branches:
 
@@ -205,7 +210,7 @@ to do so with:
  git branch new_branch_name 51a579c
 
 Switched to branch 'master'
-```
+{% endcodeblock %}
 
 To save your commits you can create a new branch for them.
 
@@ -215,17 +220,17 @@ There are two ways of making this happen:
 
 * `reset` is for changes that haven't been pushed to a remote repository yet.
 
-```
+{% codeblock lang:sh %}
 git reset --hard 92225e88
-```
+{% endcodeblock %}
 
 Doing this on pushed changes will cause the shared history of the project to change.
 
 * `revert` is for changes that have been pushed to a remote server.
 
-```
+{% codeblock lang:sh %}
 git revert 92225e88
-```
+{% endcodeblock %}
 This creates a commit that removes all changes in the specified commit.
 
 __Finally I'm done with my changes. Let's share it with the world__
@@ -234,38 +239,40 @@ We've speaking of a remote repository. After making all your feature changes you
 
 You will need a `remote` for that.
 
-```
+{% codeblock lang:sh %}
 #'origin' is the name you give to your remote
 git remote add origin git@github.com:v3rse/hallo.git
-```
+{% endcodeblock %}
 
 If you cloned the repository then you already have a remote.
 
-```
+{% codeblock lang:sh %}
 #You can list your remotes
 git remote -v
-```
+{% endcodeblock %}
 
 N/B: A remote may even be a cloud server(maybe a Quality Assurance server or a Continuous Integration server) which you can deploy to by pushing.
 
-```
+{% codeblock lang:sh %}
 #You can push to a specific branch on remote
 git push origin master
-```
+{% endcodeblock %}
 
 Shortcuts
 ---
 * Add and Committing
-```
+
+{% codeblock lang:sh %}
 #Add and commit a file already added once
 git commit -a -m "<some message>"
-```
+{% endcodeblock %}
 
 * Branching and Checking out
-```
+
+{% codeblock lang:sh %}
 #Branching and checking out in one command
 git checkout -b <new-branch-name>
-```
+{% endcodeblock %}
 
 I'll be writing later on the differences between `fetch` and `push` later as well as the mysteries `rebase` and  **squash**.
 
@@ -274,27 +281,30 @@ GUI Tools
 * GitK Tool
 This is a minimal tool to help you to visually understand your repository
 
-```
+{% codeblock lang:sh %}
 #Install gitk
 sudo apt-get install gitk
 #show all commits reachable from any reference not just HEAD
 gitk --all
-```
+{% endcodeblock %}
+
+
 
 ![Gitk](https://git-scm.com/book/en/v2/book/A-git-in-other-environments/images/gitk.png)
-
 
 
 * Ungit
 This one tool I used often in the past. It's good for all beginners because of the visuals.
 
-```
+{% codeblock lang:sh %}
 #Install ungit
 npm install -g ungit
 #show start it up in your browser
 cd project-folder
 ungit
-```
+{% endcodeblock %}
+
+
 
 ![Ungit](https://github.com/FredrikNoren/ungit/raw/master/screenshot.png)
 
