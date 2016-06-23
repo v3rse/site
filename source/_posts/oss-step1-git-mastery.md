@@ -1,4 +1,5 @@
-title: A journey into Open Source [Step 1 - Git Mastery]
+title: A journey into Open Source • Step 1 - Git Mastery
+date: 2016-04-19 07:35:34
 tags: journal
 ---
 
@@ -7,20 +8,20 @@ Git: The intro
 
 ![Git](https://imgs.xkcd.com/comics/git.png)
 
-I've been thinking about about getting into open source for the longest time. To get the procrastination out of the way I decided to blog about starting. And publish the blogs!!..oooh scary.
+I've been thinking about about getting into open source for the longest time. To get the procrastination out of the way I decided to blog about  this journey. And publish the posts!!..oooh scary.
 
 I'm guessing since I'm going to be working with GitHub a lot it's about time I faced this weird little monster called `git`.
 
-Coming from an Java background I used `SVN`...a lot. It was simple enough to use at work and with an IDE you didn't even have to know the commands. But `git` has proven a bit more difficult to master mainly because I haven't used it as frequently as I may have wanted. Plus it doesn't seem as easy to understand as `SVN` mainly because:
+Coming from a Java background I used `SVN`...a lot. It was simple enough to use at work and with an IDE you didn't even have to know the commands. But `git` has proven a bit more difficult to master mainly because I hadn't used it as frequently as I may have wanted. Plus it doesn't seem as easy to understand as `SVN` mainly because:
 
 > It is a distributed Version Control System (VCS)!!
 
 Which means:
-* You’ll have a __local repository__ which lives inside a special folder named `.git`. This you can commit changes even when offline.
+* You’ll have a __local repository__ which lives inside a special folder named `.git`. With this you can commit changes even when offline.
 * You’ll normally (but not necessarily) have a __remote, central repository__ where different collaborators may contribute their code.
 * Each of those contributors has an __exact clone__ of the repository on their local workstation.
 
-Types VCS
+VCS Types
 ---
 ![Local version control](https://git-scm.com/book/en/v2/book/01-introduction/images/local.png)
 *Local version control*
@@ -34,9 +35,9 @@ Types VCS
 
 Under The Hood
 ---
-This is what `git` actually does. It manipulates files in your file system based on commands you give it. It manages everything it does logical as tree structure . The commands I mentioned help you navigate and manipulate the tree structure. One of these commands is the `commit` which creates a node in this tree.
+This is what `git` actually does; it manipulates files in your file system based on commands you give it. It manages everything it does logical in a tree structure . The commands I mentioned help you navigate and manipulate the tree structure. One of these commands is  `commit` which creates a node in this tree.
 
-Think of the `master` branch as container for/grouping of nodes(commits) on the tree with the most recent node on top. `HEAD`,on the other hand, is a **reference** to the **node** the `work space` of the repository currently points to.
+Think of the `master` branch as container for or a grouping of nodes(commits) on the tree with the most recent node on top. `HEAD`,on the other hand, is a **reference** to the **node** the `work space` of the repository currently points to. Confusing? Don't worry it gets clearer.
 
 ![Tree](http://imgs.xkcd.com/comics/git_commit.png)
 
@@ -44,7 +45,7 @@ Think of the `master` branch as container for/grouping of nodes(commits) on the 
 Getting My Hands Dirty
 ===
 
- __I have a project I want to be 'versioned' using `git`__.
+ __I have a project I'd like to 'version' using `git`__.
 
 Easy!
 
@@ -123,27 +124,27 @@ __Oh no! I have conflict. How do I merge?__
 A conflict occurs when two or more sets of changes are made to the same file. For `git` this usually happens when you attempt to merge changes from two branches that have changes to the same files. A merge copies nodes of the tree contained within a branch into another branch. Conflicts can be resolved manually by editing the file in conflict and committing it.
 
 {% codeblock lang:sh %}
-#Let's assume I also made a change to the original hello.txt file within the new branch create previously
+#Let's assume I also made a change to the original hello.txt file within the new branch created previously
 #To merge changes to my master branch
 git checkout master
 git merge new-file-feature
 {% endcodeblock %}
 
-You should get a message like
+You should get a message like...
 
 {% codeblock lang:sh %}
 Auto-merging hello.txt
 CONFLICT (content): Merge conflict in hello.txt
 {% endcodeblock %}
 
-To resolve the conflict
+To resolve the conflict...
 
 {% codeblock lang:sh %}
 #Open the file in an editor
 vim hello.txt
 {% endcodeblock %}
 
-You should see something like
+You should see something like...
 
 {% codeblock lang:txt %}
 Hello, world!
@@ -155,7 +156,7 @@ Hi I was added in the new-file-feature branch
 
 {% endcodeblock %}
 
-Edit to look the way you want
+Edit it to look the way you want
 
 {% codeblock lang:txt %}
 Hello, world!
@@ -168,7 +169,7 @@ N/B: Your conflicts may span multiple lines
 
 __I want to go back in time and try some stuff__
 
-`Git` keeps a log of all commits. It keeps SHA references to each commit. This idea for jumping back to previous commit.
+`Git` keeps a log of all commits. It keeps SHA references to each commit. This is ideal for jumping back to previous commit. Here's why...
 
 {% codeblock lang:sh %}
 #List all previous commits. Copy the reference
@@ -196,7 +197,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 HEAD is now at 92225e8... Add line to hello.txt
 {% endcodeblock %}
 
-A **detached HEAD state** basically means that the work space is currently not pointing to any container for commits (a branch). This means that if you checkout a branch you'll lose all commits made here.
+A **detached HEAD state** basically means that the work space is currently not pointing to any *container of commits* (a branch). This means that if you checkout a branch you'll lose all commits made here.
 
 {% codeblock lang:txt %}
 Warning: you are leaving 1 commit behind, not connected to
@@ -212,7 +213,7 @@ to do so with:
 Switched to branch 'master'
 {% endcodeblock %}
 
-To save your commits you can create a new branch for them.
+To save your commits you can create a new branch for them in effect putting them into a 'container'.
 
 __I don't like the way the project looks now. How do I undo the changes?__
 
@@ -224,7 +225,7 @@ There are two ways of making this happen:
   git reset --hard "92225e88"
   {% endcodeblock %}
 
-  Doing this on pushed changes will cause the shared history of the project to change.
+  Doing this on pushed changes will cause the shared history of the project to change causing 'synching' issues.
 
 * `revert` is for changes that have been pushed to a remote server.
 
@@ -236,7 +237,7 @@ There are two ways of making this happen:
 
 __Finally I'm done with my changes. Let's share it with the world__
 
-We've speaking of a remote repository. After making all your feature changes you may want to share it with the rest of your team.
+We've been speaking of a remote repository for a while now. After making all your feature changes you may want to share it with the rest of your team.
 
 You will need a `remote` for that.
 
@@ -252,7 +253,7 @@ If you cloned the repository then you already have a remote.
 git remote -v
 {% endcodeblock %}
 
-N/B: A remote may even be a cloud server(maybe a Quality Assurance server or a Continuous Integration server) which you can deploy to by pushing.
+**N/B: A remote may even be a cloud server(maybe a Quality Assurance server or a Continuous Integration server) which you can deploy to by pushing.**
 
 {% codeblock lang:sh %}
 #You can push to a specific branch on remote
@@ -261,7 +262,7 @@ git push origin master
 
 Shortcuts
 ---
-* Add and Committing
+* Adding and Committing
 
 {% codeblock lang:sh %}
 #Add and commit a file already added once
@@ -275,7 +276,7 @@ git commit -a -m "<some message>"
 git checkout -b <new-branch-name>
 {% endcodeblock %}
 
-I'll be writing later on the differences between `fetch` and `push` later as well as the mysteries `rebase` and  **squashing**.
+I'll be writing later on the differences between `fetch` and `push` later as well as the mysteries of `rebase` and  **squashing**.
 
 GUI Tools
 ---
@@ -295,7 +296,7 @@ gitk --all
 
 
 * Ungit
-This one tool I used often in the past. It's good for all beginners because of the visuals.
+This is one tool I've used often in the past. It's good for all beginners because of the visuals.
 
 {% codeblock lang:sh %}
 #Install ungit
