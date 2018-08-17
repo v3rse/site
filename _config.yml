@@ -74,15 +74,51 @@ per_page: 10
 pagination_dir: page
 
 # Disqus
-disqus_shortname: readwriteexecute
+# disqus_shortname: readwriteexecute
+disqus:
+  enable: true
+  shortname: readwriteexecute
 
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
-plugins:
-- hexo-generator-cname
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: apollo
-exclude_generator:
+## https://github.com/probberechts/hexo-theme-cactus
+theme: cactus
+
+theme_config:
+  colorscheme: white
+  nav:
+    home: /
+    about: /about/
+    Writing: /archives/
+    projects: http://github.com/v3rse
+  social_links:
+    github: https://github.com/v3rse
+    twitter: https://twitter.com/NanaOAdane
+    linkedin: https://www.linkedin.com/in/nanaadane/
+    # mail: mailto:nanaofosuheneadane@gmail.com
+  tags_overview: true
+  posts_overview:
+    show_all_posts: true
+    # post_count: 5
+  logo:
+    enabled: true
+    width: 50
+    height: 50
+    # url: /images/logo.png
+    gravatar: true
+  favicon:
+    desktop:
+      # url: /images/favicon.ico
+      gravatar: true
+    android:
+      # url: /images/favicon-192x192.png
+      gravatar: true
+    apple:
+      # url: /images/apple-touch-icon.png
+      gravatar: true
+  gravatar:
+    email: nanaofosuheneadane@gmail.com
 
 sitemap:
   path: sitemap.xml
@@ -91,4 +127,4 @@ sitemap:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/v3rse/v3rse.github.io.git
+  repo: git@github.com:v3rse/v3rse.github.io.git
