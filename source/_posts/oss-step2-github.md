@@ -4,7 +4,7 @@ tags: journal
 ---
 
 {% blockquote %}
-This is an entry in my code journal. I'm currently writing on the open source software world. This is mainly so that I can Google my thoughts later and even share the experience with others who plan on getting in on the OSS action. The first part was on [`git` mastery](2016/04/19/oss-step1-git-mastery/). These entries will be constantly evolve as my knowledge grows so stay tuned. **This next part is on working with GitHub.**
+This is an entry in my code journal. I'm currently writing on the open source software world. This is mainly so that I can Google my thoughts later and even share the experience with others who plan on getting in on the OSS action. The first part was on {% post_link oss-step1-git-mastery `git` mastery %}. These entries will be constantly evolve as my knowledge grows so stay tuned. **This next part is on working with GitHub.**
 {% endblockquote %}
 
 GitHub: The intro
@@ -72,7 +72,7 @@ I'll just focus on explaining how it is used for open source projects. Let's say
 
   ![pull request](/images/pull_request.png)
 
-  This may sound intimidating but depending on the community this can actually be fun. You may get very good coding advice and different ideas on how to improve your code. You can even make it a habit to review other people's code to learn new and amazing techniques.
+  This may sound intimidating but depending on the community this can actually be fun. You may get good coding advice and different ideas on how to improve your code. You can even make it a habit to review other people's code to learn new and amazing techniques.
 
   **N/B: most projects have rules and conventions governing how to contribute code and write issues. Please check out the Wiki tab or CONTRIBUTING.md file before writing any code or opening an issue**
 

@@ -117,7 +117,7 @@ theme_config:
   gravatar:
     email: nanaofosuheneadane@gmail.com
   disqus:
-    enable: true
+    enabled: true
     shortname: readwriteexecute
 
 sitemap:

@@ -8,13 +8,13 @@ Git: The intro
 
 ![Git](https://imgs.xkcd.com/comics/git.png)
 
-I've been thinking about about getting into open source for the longest time. To get the procrastination out of the way I decided to blog about  this journey. And publish the posts!!..oooh scary.
+I've been thinking of getting into open source for the longest time. To get the procrastination out of the way I decided to blog about  this journey. And publish the posts!!..oooh scary.
 
 I'm guessing since I'm going to be working with GitHub a lot it's about time I faced this weird little monster called `git`.
 
 Coming from a Java background I used `SVN`...a lot. It was simple enough to use at work and with an IDE you didn't even have to know the commands. But `git` has proven a bit more difficult to master mainly because I hadn't used it as frequently as I may have wanted. Plus it doesn't seem as easy to understand as `SVN` mainly because:
 
-> It is a distributed Version Control System (VCS)!!
+> It is a distributed Version Control System (VCS)
 
 Which means:
 * You’ll have a __local repository__ which lives inside a special folder named `.git`. With this you can commit changes even when offline.
@@ -35,9 +35,9 @@ VCS Types
 
 Under The Hood
 ---
-This is what `git` actually does; it manipulates files in your file system based on commands you give it. It manages everything it does logical in a tree structure . The commands I mentioned help you navigate and manipulate the tree structure. One of these commands is  `commit` which creates a node in this tree.
+This is what `git` actually does; it manipulates files in your file system based on commands you give it. It manages everything it does logical in a tree structure . The commands I mentioned help you navigate and manipulate the tree structure. One of these commands is `commit` which creates a node in this tree. A node represents a group of changes to files in the project.
 
-Think of the `master` branch as container for or a grouping of nodes(commits) on the tree with the most recent node on top. `HEAD`,on the other hand, is a **reference** to the **node** the `work space` of the repository currently points to. Confusing? Don't worry it gets clearer.
+Think of the `master` branch as container for or a group of nodes(commits) on the tree with the most recent node on top. `HEAD`,on the other hand, is a **reference** to the **node** the `work space` of the repository currently points to. Confusing? Don't worry it gets clearer.
 
 ![Tree](http://imgs.xkcd.com/comics/git_commit.png)
 
@@ -45,7 +45,7 @@ Think of the `master` branch as container for or a grouping of nodes(commits) on
 Getting My Hands Dirty
 ===
 
- __I have a project I'd like to 'version' using `git`__.
+ __I have a project I'd like to 'version' it using `git`__.
 
 Easy!
 
@@ -98,9 +98,9 @@ git commit -m 'Add new file'
 
 __I want to create a new feature in my project__
 
-`Git` is highly optimized for branching and merging quickly. Branches aren't copies of the working directory folder. Instead they are just another grouping of nodes on the tree. `Git` keeps track of branch changes with the same folder as the working directory and makes changes to the working directory when new branch is checked out.
+`Git` is highly optimized for branching and merging quickly. Branches aren't copies of the working directory folder. Instead they are just another grouping of nodes on the tree. `Git` keeps track of branch changes within the same folder as the working directory and makes changes to the working directory when new branch is checked out.
 
-Conventionally new features to a project are created in a branch. Feature branches are then merged into the master branch after testing and then deleted. `Git` allows us to do this quickly and easily because now files are actually copied.
+Conventionally new features for a project are created in a branch. Feature branches are then merged into the master branch after testing and then deleted. `Git` allows us to do this quickly and easily because no files are actually copied.
 
 {% codeblock lang:sh %}
 #Create new branch

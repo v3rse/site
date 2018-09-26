@@ -3,7 +3,6 @@ tags: tips
 date: 2018-09-26 10:16:40
 ---
 
-
 > This little tip is to help anyone struggling with connecting to MongoDB Atlas like I did.
 
 ![nosql](http://geekandpoke.typepad.com/.a/6a00d8341d3df553ef0148c80ac6ef970c-800wi)
@@ -24,12 +23,16 @@ The sad thing is that it is difficult to connect to Atlas using Robo 3T as oppos
 
 1. Retrieve your connection link. Click the _Connect_ button.
 ![connect](/images/mongo-connect.png)
+
 2. Create a new connection. Enter your the host details in Robo 3T.
 ![enter host](/images/mongo-enter-host.png)
+
 3. Enter your credentials.
 ![enter credentials](/images/mongo-enter-credentials.png)
-4. Setup SSL.
+
+4. Setup SSL. I didn't need a pem cert/key in my case. All I had to do was select `Self-signed Certificate`.
 ![setup ssl](/images/mongo-setup-ssl.png)
+
 5. Test the connection.
 ![test connection](/images/mongo-test-connection.png)
 
@@ -48,3 +51,5 @@ db.getCollection('todos').find({status: 'done'})
 ```
 
 Hope this saves someone sometime.
+
+__Happy Coding__
