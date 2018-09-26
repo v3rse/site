@@ -1,8 +1,12 @@
 title: VSCode Debugging - JS Edition
 tags:
-- journal
-- talk
+  - journal
+  - talk
+date: 2018-09-26 22:33:13
 ---
+
+
+<iframe src="//slides.com/nanagodchildadane/deck-2/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 This is another talk I gave to expose the debugging features in VSCode to my team. Context is the most useful thing when debugging. Most beginners start by using a `console.log()` to find out contents of variables at run time.
 
@@ -13,4 +17,4 @@ The slides still need a bit of fleshing out mainly because I did a lot of demos 
 - [VSCode Debugging](https://code.visualstudio.com/docs/editor/debugging)
 - [VSCode Debugging - NodeJs](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
-<iframe src="//slides.com/nanagodchildadane/deck-2/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+__Happy Coding__

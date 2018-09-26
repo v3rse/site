@@ -1,8 +1,12 @@
 title: Dev Inc.
 tags:
-- journal
-- talk
+  - journal
+  - talk
+date: 2018-09-26 22:32:51
 ---
+
+
+<iframe src="//slides.com/nanagodchildadane/deck-4/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 This is a talk I gave on developer branding. Below are my notes while preparing for the talk:
   - Goals:
@@ -37,5 +41,4 @@ This is a talk I gave on developer branding. Below are my notes while preparing 
   - Twitter:
     - Have an account? Use it!
 
-
-<iframe src="//slides.com/nanagodchildadane/deck-4/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+__Happy Coding__
