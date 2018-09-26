@@ -1,5 +1,7 @@
 title: "Yo Just Chill!!"
-tags: snippets open source
+tags:
+- journal 
+- talk
 date: 2014-11-21 11:18:43
 ---
 
