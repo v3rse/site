@@ -86,7 +86,7 @@ theme_config:
   colorscheme: white
   nav:
     home: /
-    about: /about/
+    about: /
     Writing: /archives/
     projects: http://github.com/v3rse
   social_links:
