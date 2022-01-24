@@ -4,21 +4,18 @@ tags: thoughts
 ---
 Everyone has heroes. Apart from Jesus I just discovered another one of mine.
 
-TLDR: Christ is Steph Curry's ID and mine as well
-===
+## TLDR: Christ is Steph Curry's ID and mine as well
 
-![Steph Curry](https://i.ytimg.com/vi/d3bMMH__6rI/maxresdefault.jpg)
->_Steph Curry_
+![Steph Curry|https://i.ytimg.com/vi/d3bMMH__6rI/maxresdefault.jpg]
 
 
-A bit of a primer
----
+### A bit of a primer
+
 For those who don't know him too well Steph Curry's pretty much the best 3 point shooter in the NBA  and playing with one of the hardest working teams in the NBA right now, __IMHO__, the Golden State Warriors.
 
 It wasn't always like that for him though. Although he came from a family of highly athletic people (NBA player Dell Curry who was also a great shooter, a mom who played college volleyball and younger siblings who are excelling in their own sports careers), he was rejected by the some of the top college teams after high school because they thought his small frame wasn't what they wanted in a star point guard(sound familiar? Hint: David).
-<!-- more -->
-![Steph @ Davidson](http://images.performgroup.com/di/library/omnisport/d1/18/steph-curry-120315-usnews-getty-ftr_lbe874ol80s01mdfzfdg2tdi7.jpg?t=1779701585)
->Steph @ Davidson
+
+![Steph @ Davidson|http://images.performgroup.com/di/library/omnisport/d1/18/steph-curry-120315-usnews-getty-ftr_lbe874ol80s01mdfzfdg2tdi7.jpg?t=1779701585]
 
 After a being picked up by a then unknown liberal arts college named Davidson (There is that name again...don't wanna be superstitious here though) he had a bit of a slow start. However, soon in his college career he would lead the nation in scoring second only to Kevin Durant.
 
@@ -26,13 +23,13 @@ He got picked by the Warriors in 2009 and if things hadn't been rough enough he 
 
 Finally, in 2015 he rose to super stardom when he led his team to their first NBA championship  since __1975!!__
 
-But enough of the history lesson. If you want to know more about his current exploits and history just [Google](https://en.wikipedia.org/wiki/Stephen_Curry) his name or watch the video below by ESPN:
+But enough of the history lesson. If you want to know more about his current exploits and history just [Google|https://en.wikipedia.org/wiki/Stephen_Curry] his name or watch the video below by ESPN:
 
 {% youtube U69E64byTDo %}
 
 
-Let's break it down
----
+## Let's break it down
+
 Now I know some of you are saying "..well he's just a basketball player". Just bear with me a little longer.
 
 Here are a few things I noted from his life:
@@ -49,8 +46,8 @@ Here are a few things I noted from his life:
 After all the __hard work, honor, humility__ and __heart__, I see someone who held on to __faith__ and gained __hope__ in dark times. He keeps this __faith__ even now and  I believe it's the source of his confidence in-game. This __hope__ manifests itself in his ability to rally his team in a tough match and keep it together when things get intense.
 
 
-What does all this even mean
----
+## What does all this even mean
+
 I love basketball and I love Steph Curry but really the greatest effect he's had on me is to make me question my identity in Christ.
 
 I asked myself whether I was really laying it all out there for the one who has bought me with his own blood. Growing up I've always wanted to be like someone I saw on TV, someone I had read of in a book or met in life that inspired me. These people aren't necessarily bad but I came to depend on these different role models for my identity as a person.

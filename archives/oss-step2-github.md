@@ -7,8 +7,7 @@ tags: journal
 This is an entry in my code journal. I'm currently writing on the open source software world. This is mainly so that I can Google my thoughts later and even share the experience with others who plan on getting in on the OSS action. The first part was on {% post_link oss-step1-git-mastery `git` mastery %}. These entries will be constantly evolve as my knowledge grows so stay tuned. **This next part is on working with GitHub.**
 {% endblockquote %}
 
-GitHub: The intro
-===
+## GitHub: The intro
 
 For those who didn't know `git` wasn't made by [GitHub](https://github.com/) (believe me I've heard that before). It was made by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same awesome guy that wrote the Linux kernel.
 
@@ -16,8 +15,7 @@ Github is actually a service that provides hosting (amongst other things) for `g
 
 It's only free when your repository is public i.e. everybody gets to see your crappy/awesome code and copy it. There's a paid option for organizations that want to keep their repositories private. There are other popular alternatives to GitHub like [Bitbucket](https://bitbucket.org) and [GitLab](https://gitlab.com/) which give you **free private repositories** and many other cool features.
 
-Under The Hood
----
+### Under The Hood
 
 GitHub is pretty simple to use and it has lots of [good documentation](https://help.github.com/) on how to use it.
 
