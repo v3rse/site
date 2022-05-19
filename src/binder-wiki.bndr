@@ -1,0 +1,21 @@
+title: binder wiki engine
+parent: binder
+---
+
+I've decided to migrate binder from a static blog generator to a static wiki engine. This is so that I can better capture and organise my thoughts, learnings and projects.
+
+It now has internal linking and a better menu flow based on parent-child relationships between entries as seen on this page. `bndr` still serves as markup language with the addition of `>[internal]` syntax for internal links. For example I'll link bank to the parent >[binder] article using this new syntax.
+
+
+Addtional features include:
+- external links open in new tabs
+- link and image sources lists are generated for each page
+- generation times for each build stage is printed
+- home and meta page genertion
+- minor fixes
+
+New changes can be found here on this [tag v0.1|https://github.com/v3rse/binder/tree/v0.1]
+
+Still not for public consumption. Don't use it!
+
+*Happy Coding*

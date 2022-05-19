@@ -9,9 +9,10 @@ body {
 
 a {color: white}
 
-header { float:left; margin: 5px 30px 0 0 }
+header { float:left; margin: 5px 30px 0 10px }
 
-nav ul { float:right; }
+nav { float:right; margin-right: 10px; }
+nav ul { float:left; }
 nav ul li { list-style-type: none; white-space: pre}
 
 main {padding: 40px; max-width: 700px; clear: both}
@@ -25,4 +26,5 @@ main > p {line-height: 25px; font-size: 16px}
 main > pre {font-family: monospace; padding: 15px; background: grey}
 main ul li code {font-family: monospace; background: grey; padding: 0 5px 2px 5px}
 
-footer { padding-top:10px; border-top:1.5px solid white; clear: both }
+footer { padding-top:10px; border-top:1.5px solid white; clear: both; font-size: 15px; }
+footer p {display: inline;}
