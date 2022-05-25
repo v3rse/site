@@ -1,5 +1,7 @@
-title: binder wiki engine
 parent: binder
+title: binder wiki engine
+description: converting a site generator into a wiki engine
+crtdate: 2022-05-19 17:42:00
 ---
 
 I've decided to migrate binder from a static blog generator to a static wiki engine. This is so that I can better capture and organise my thoughts, learnings and projects.
