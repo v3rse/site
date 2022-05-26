@@ -1,4 +1,4 @@
-parent: software
+parent: tools
 title: rus
 description: an rss feed reader for the command line
 crtdate: 2022-05-25 05:55:57
