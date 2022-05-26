@@ -1,4 +1,4 @@
-parent: blog
+parent: log
 title: Connecting Robo 3T to MongoDB Atlas
 description: tips for connecting to mongodb atlas from robo 3t
 crtdate: 2018-09-26 10:16:40 
