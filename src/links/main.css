@@ -3,25 +3,38 @@ body {
   color: white;
   font-family: sans-serif;
   box-sizing: border-box;
-  text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-a {color: white}
+body a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+}
 
-header { float:left; margin: 5px 30px 0 10px }
+.container {
+  max-width: 100%;
+  height: auto;
+}
 
-nav { float:right; margin-right: 10px; }
+#rss-link {
+  color: orange;
+}
+
+header { margin: 5px 30px 0 10px; font-size: 40px; }
+header a { float: left;}
+
+nav { float:right; margin: 1px 10px 0px 0px; font-size: 15px; }
 nav ul { float:left; }
 nav ul li { list-style-type: none; white-space: pre}
 
-main {padding: 40px; max-width: 700px; clear: both}
+main {padding: 10px; max-width: 700px; min-height: 800px; clear: both}
 main img {width:100; max-width:700px; padding: 15px}
-main ul li { list-style-type: square}
+main ul li { list-style-type: square }
 main time { color: grey }
 main > ul {line-height: 25px}
 main > ol {line-height: 25px}
-main > p {line-height: 25px; font-size: 16px}
+main > p {line-height: 25px;}
 
 main > pre {font-family: monospace; padding: 15px; background: grey}
 main ul li code {font-family: monospace; background: grey; padding: 0 5px 2px 5px}
