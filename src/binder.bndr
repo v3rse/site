@@ -4,7 +4,7 @@ description: building a blog generator
 crtdate: 2022-01-22 04:53:00
 ---
 
-In an attempt to get over a case of [coder's blog|https://twitter.com/NanaOAdane/status/1484731437265920004?s=20], I built myself a static generator. It's called *binder*. _It's what generated what you're reading now._
+In an attempt to get over a case of [coder's block|https://twitter.com/NanaOAdane/status/1484731437265920004?s=20], I built myself a static generator. It's called *binder*. _It's what generated what you're reading now._
 
 It was inpired by stuff others have built like [oscean|https://github.com/XXIIVV/oscean] is used to generate [the XXIIVV wiki|https://wiki.xxiivv.com] and a similar [tool|https:github.com/hundredrabbits/100r.co] used to generate the [Hundredrabbits' site|http://100r.co]. It aims to be a [memex|https://en.wikipedia.org/wiki/Memex] (memory extension) or wiki generator as the former example is.
 
