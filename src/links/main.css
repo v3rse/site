@@ -12,22 +12,21 @@ body a {
   font-weight: 400;
 }
 
-.container {
-  max-width: 100%;
-  height: auto;
+body a:hover {
+  background-color: grey;
 }
 
 #rss-link {
   color: orange;
 }
 
-header { margin: 5px 30px 0 10px; font-size: 40px; }
+header { max-width: 750px; display: inline-block; margin: 5px 30px 0 10px; font-size: 40px;  }
 
 nav { float:right; margin: 1px 10px 0px 0px; font-size: 15px; }
 nav ul { float:left; }
 nav ul li { list-style-type: none; white-space: pre}
 
-main {padding: 10px; max-width: 700px; min-height: 800px; clear: both}
+main {padding: 10px; max-width: 700px; clear: both}
 main img {width:100; max-width:700px; padding: 15px}
 main ul li { list-style-type: square }
 main a {color: antiquewhite;}
