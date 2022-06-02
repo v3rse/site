@@ -36,7 +36,7 @@ main > ul {line-height: 25px}
 main > ol {line-height: 25px}
 main > p {line-height: 25px;}
 
-main > pre {font-family: monospace; padding: 15px; background: grey}
+main > pre {font-family: monospace; padding: 15px; background: grey; white-space: pre-wrap;}
 main ul li code {font-family: monospace; background: grey; padding: 0 5px 2px 5px}
 
 footer { padding-top:10px; border-top:1.5px solid white; clear: both; font-size: 15px; }
