@@ -1,0 +1,85 @@
+parent: knowledge
+title: rss
+description: really simple syndication or rdf site summary
+crtdate: 2022-06-02 06:05:21
+isportal: false
+---
+
+[Syndication|https://www.dictionary.com/browse/syndication]: _the state or fact of being published simultaneously, or supplied for simultaneous publication, in a number of newspapers or other periodicals:_
+
+
+#2 Intro
+RSS is one of many attempts to create a web syndication format. It allows publishers of web content like blogs, news sites and podcasts to share updates to their content with users (using feed readers) and even other sites (such as aggregators).
+
+An RSS feed is basically an XML-formatted document,, and it's pretty much human-readable. Check a portion of [this site's RSS feed|https://www.nanaadane.com/links/rss.xml] below:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>nanaadane's wiki</title>
+  <description>this is my small corner of the universe</description>
+  <link>https://www.nanaadane.com/</link>
+  <copyright>2022 Nana Adane All rights reserved</copyright>
+  <lastBuildDate>Thu Jun 02 2022 06:52:51 GMT+0000 (Greenwich Mean Time)</lastBuildDate>
+  <pubDate>Thu Jun 02 2022 06:52:51 GMT+0000 (Greenwich Mean Time)</pubDate>
+  <ttl>1440</ttl>
+  <generator>binder</generator>
+  <item>
+    <title>rss</title>
+    <description>really simple syndication or rdf site summary</description>
+    <author>Nana Adane</author>
+    <link>https://www.nanaadane.com/rss.html</link>
+    <guid isPermaLink="false">10</guid>
+    <pubDate>Thu Jun 02 2022 06:05:21 GMT+0000 (Greenwich Mean Time)</pubDate>
+  </item>
+</channel>
+```
+
+#2 Versions
+As seen in the above example, RSS comes in different format versions. The common list of formats that most clients and [parsers|https://github.com/rbren/rss-parser/blob/master/lib/parser.js#L48] support are as follows (each with their own peculiarities):
+
+- RSS v0.91 (the original from 1999)
+- RSS v1.0 (based W3C Resource Description Framework - RDF. Hence, why it's called RDF Site Summary)
+- RSS v2.0 (very similar to 0.9x but with namespace module and six additional optional elements)
+
+There are other non-RSS feed formats like [Atom|https://en.wikipedia.org/wiki/Atom_(Web_standard)] and [JSON Feed|https://www.jsonfeed.org/] which are also used on some sites. 
+
+*Atom* is a popular alternative to using RSS v2.0 because it's less ambiguous:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>{{FEED_NAME}}</title>
+	<id>{{HOMEPAGE_URL}}</id>
+	<link rel="alternate" href="HOMEPAGE_URL"/>
+	<link href="FEED_URL" rel="self"/>
+	<updated>{{LAST_UPDATE_TIME in RFC3339 format}}</updated>
+	<author>
+		<name>{{AUTHOR_NAME}}</name>
+	</author>
+	<entry>
+		<title>{{ENTRY.TITLE}}</title>
+		<link rel="alternate" type="text/html" href="{{ENTRY.HTML_URL}}"/>
+		<id>{{ENTRY.PERMALINK}}</id>
+		<published>{{ENTRY.FIRST_POST_TIME in RFC3339 format}}</published>
+		<updated>{{ENTRY.LAST_UPDATE_TIME in RFC3339 format}}</updated>
+		<content type="html">{{ENTRY.HTML}}</content>
+	</entry>
+</feed>
+```
+
+#2 Specification 
+The [W3 specification for RSS v2.0|https://validator.w3.org/feed/docs/rss2.html] defines the structure of a document and provides descriptions for the various fields in a document.
+
+#2 Best Practices
+When building your own feed or feed generator (like the one in use for this site) the specification comes in very handy. As with many things, however, there are a some best practice to follow:
+
+- use either the RSS v2.0 or Atom formats
+- specify content type in your header e.g. `Content-Type: application/rss+xml`
+- absolute URLs are preferred
+- add a line in your sites `head` tag for your feed e.g. `<link rel=alternate title="Blog Posts" type=application/rss+xml href="link/rss.xml">`. This helps search engines discover your feed.
+- providing the full content of your `content` in the feed is recommended, although not always practiced.
+- entry IDs should never change and should be unique
+
+A more detailed list of best practices can be found [here|https://kevincox.ca/2022/05/06/rss-feed-best-practices/]
