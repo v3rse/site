@@ -1,6 +1,6 @@
-parent: eng
+parent: projects
 title: tools
-description: software tools i built
+description: tools i built
 crtdate: 2022-05-25 22:45:58
 isportal: true
 ---
