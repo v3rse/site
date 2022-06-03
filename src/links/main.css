@@ -3,9 +3,9 @@ body a { text-decoration: none; color: white; font-weight: 400; }
 
 #rss-link { color: orange; float: right; }
 
-header { display: inline-block; margin: 5px 30px 0 10px; font-size: 40px; }
+header { display: inline-block; font-size: 40px; }
 
-nav { float:right; margin: 1px 10px 0px 0px; font-size: 15px; }
+nav { float:right; font-size: 15px; }
 nav ul { float:left; }
 nav ul li { list-style-type: none; white-space: pre; }
 
@@ -20,6 +20,8 @@ main > p { line-height: 25px; }
 
 main > pre { font-family: monospace; padding: 15px; background: grey; white-space: pre-wrap; }
 main ul li code { font-family: monospace; background: grey; padding: 0 5px 2px 5px; }
+
+h1,h2,h3,h4,h5,h6 { padding-top: 30px; }
 
 footer { padding-top:10px; border-top:1.5px solid white; clear: both; font-size: 15px; }
 footer p { display: inline; margin-left: 5px; }
