@@ -1,0 +1,95 @@
+parent: linux
+title: eww (ElKowar's Wacky Widgets)
+description: a rust based widget system with a lisp (s-expression) based widget configuration and SCSS styling
+crtdate: 2022-06-29 17:00:50
+isportal: false
+---
+
+![eww showcase|media/eww-showcase.png]
+
+a rust based widget system with a lisp (s-expression) based widget configuration and SCSS styling
+- [docs|https://elkowar.github.io/eww/eww.html]
+- [example|https://github.com/janleigh/dotfiles/tree/master/cfg/eww]
+
+#2 Setup
+- install `eww-git`.
+- to start create an `eww` director in `~/.config`. the default one can be found in `/etc/xdg/eww`
+- create an `eww.yuck` in this new directory for you wiget declarations
+- create an `eww.scss` in this new directory for you wiget styles (this is basically SCSS but for GTK css)
+
+#2 Running
+- run `eww daemon` to start the daemon service
+- open a window by running `eww open <window-name>`
+- close a window by running `eww close <window-name>` or close all windows with `eww close-all`
+
+#2 Building
+- while debugging a window or widget you can follow logs using `eww logs`
+- using `wmctrl -s <number>` you can switch windows for EWMH compliant window managers. this can be tied to button onclick events. [more on EWMH|https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints]
+- using `playerctl --follow metadata --format '{{ artist }} - {{ title }}'` you can follow changes to media being played using `deflisten` a variable
+- by default windows use GTK theme style. setting `all: unset` removes styles for specific window elements
+
+#3 Yuck
+#4 include
+import configuration relative to `eww` root directory
+```
+(include "./src/yuck/_variables.yuck")
+```
+#4 defwindow
+define a window with content "test window". windows can be `normal`, `dock` etc. based on X11 or Wayland window types. `reserve` provides space for non-overlapping windows like `dock`s. `monitor` and `geometry` are used for positioning and sizing
+
+```
+(defwindow bar
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "90%"
+                      :height "10px"
+                      :anchor "top center")
+  :reserve (struts :side "bottom" :distance "4%")
+  "test window")
+```
+
+#4 defvar
+define normal variable
+
+```
+(defvar workspacelist "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]")
+```
+
+#4 deflisten
+define a variable that listens for changes at the end of a command's live output/log
+```
+(deflisten music :intial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+```
+
+#4 defpoll
+define a variable that polls a command for given interval
+```
+(defpoll time :interval "10s"
+  "date '+%H:%M %b %d, %Y'")
+```
+
+#4 defwidget
+- define a container widget. *`centerbox` requires 3 elements*
+```
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
+```
+
+- define a widget for workspaces selection. *elements in center box require positioning e.g. :halign "center" or "start" or "side"*
+
+```
+(defwidget workspaces []
+  (box :class "workspace"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (for entry in workspacelist
+      (button :onclick "wmctrl -s ${entry - 1}" entry))))
+```
