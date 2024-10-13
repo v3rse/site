@@ -1,0 +1,68 @@
+parent: knowledge
+title: games
+description: exploring game development over time
+crtdate: 2024-01-04 00:13:14
+isportal: true
+---
+
+#1 Game Dev History
+This is a look at how game development changed over time (as I've studied it). Each game here may have an Archlinux package (AUX as well)
+
+#2 Spacewar (1962)
+Considered one of the earliest digital video games, it pitted two spaceships against each other in a gravitational field setting the stage for future multiplayer gaming experiences.
+
+#3 Packages
+# spacewar
+
+#2 Colosal Cave Adventure (1976)
+One of the first text based games. Also known as Adventure (not to be confused with Atari's graphical version), this text-based adventure game laid the foundation for interactive fiction and exploration-based gameplay.
+This was written by the original author to be played by his daughter and was influenced by DnD.
+
+#3 Packages
+# open-adventure
+# adventure-qnx
+
+#2 Zork (1977)
+One of the first commercially available text based adventures by Infocom,. It popularized interactive fiction and set a benchmark for storytelling and puzzle-solving in games.
+
+#3 Packages
+# zork1
+# zork2
+# zork3
+
+#2 MUD (Multi-User Dungeon) (1978)
+It expanded the concept of multiplayer text-based gaming, pioneering the genre of online multiplayer games and player interaction in virtual worlds.
+
+#3 Packages
+# gnome-mud
+
+#2 Adventure (1979)
+It was released for the Atari 2600 console. It was influential for being one of the first action-adventure video games, featuring a player-controlled character navigating mazes, solving puzzles, and defeating enemies. Adventure introduced concepts such as inventory management, hidden secrets, and non-linear gameplay, paving the way for future adventure games and influencing game designers in the years to come.
+
+#3 Packages
+# atari-adventure
+
+#2 Rogue (1980)
+Rogue introduced procedural dungeon generation and permadeath mechanics, laying the groundwork for the roguelike genre known for its challenging gameplay and randomization.
+
+#3 Packages
+# rogue
+
+#2 Doom (1993)
+It revolutionized the first-person shooter genre with its fast-paced gameplay, immersive 3D graphics, and popularization of multiplayer deathmatch, setting new standards for FPS games.
+
+#3 Packages
+# doom
+# freedoom
+
+#2 More Resources
+# [MUD Timeline|https://www.raphkoster.com/gaming/mudtimeline.shtml]
+# [The Entire History of Video Games|https://www.youtube.com/watch?v=argpSxB1NQE]
+# [The Entire History of RPGs|https://www.youtube.com/watch?v=8o3i10OuMFQ&t=6778s]
+
+#2 Honorable Mentions
+# Donkey Kong (one of the first platformers)
+# Ultima Online (one of the first if not the first MMORPGs)
+# EverQuest (brought 3D graphics to MMORPGs)
+# Runespace (a browser based MMORPG that made them accessible)
+

@@ -1,0 +1,33 @@
+parent: knowledge
+title: uxn
+description: a stack machine
+crtdate: 2023-12-12 21:10:36
+---
+
+#1 architecture
+
+#2 cpu 
+- understands 32 main instructions that operate on 8-bit information(1 byte) with 3 modes each (r, k, kr). 32 x 4 = *128* main instructions
+- in addition each instruction has a short (i.e. it operates on 2 bytes of information) variant each with the 3 modes. 32 x 4 = *128* short instructions
+- in total: *256* instructions _therefore an 8-bit encoding_
+- these instructions make up the uxntal assembly language.
+
+#2 memory
+#3 stacks (256 bytes)
+- the instruction operate on 2 stacks.
+- a *working stack* `WS` (256 bytes).
+- a *return stack* `RS` (256 bytes).
+- both can not be accessed randomly (i.e. by address).
+
+```
+these are like registers in regular architecture
+```
+
+#3 main memory (65536 bytes)
+- is addressable by *16-bits (2 bytes)*
+- first _256 bytes_, addressable by 8-bits (*the zero-page*), are used for runtime data storage by the machine,
+- the program to be executed is stored starting at the _257th byte_ (`0100` or `256` in hex)
+- randomly accessible
+
+#3 i/o memory (256 bytes)
+- 16 section/ports/devices with _16 bytes_ each

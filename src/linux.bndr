@@ -2,5 +2,12 @@ parent: knowledge
 title: linux
 description: 
 crtdate: 2022-06-29 17:01:20
-isportal: true
 ---
+
+#1 useful commands
+#2 screenshots (`scrot`)
+- screenshot a selected area
+```
+  scrot -s <output-path>
+```
+

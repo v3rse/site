@@ -1,0 +1,9 @@
+parent: uxn
+title: varvara
+description: a device specification for a personal computer running on the uxn machine
+crtdate: 2023-12-12 21:08:49
+---
+
+a device specification for a personal computer running on the >[uxn] machine
+
+system devices have 8-bit addresses in the OF range (e.g. #08 - screen red and #0a for screen green)

@@ -1,0 +1,33 @@
+parent: games
+title: dwarf-fortress
+description: an exploration of the dwarf fortress game
+crtdate: 2023-12-21 14:03:01
+isportal: false
+---
+
+Dwarf Fortress is game with old looking ASCII graphics, procedurally generated worlds, characters and lore. What's not to love about it.
+
+#1 Changing the tileset
+![dwarf fortress with Wanderlust tile set|media/dwarf-fortress.png]
+The original tileset hurts my eyes so I switched to [Wanderlust|http://www.bay12forums.com/smf/index.php?topic=145362.0]
+
+Steps:
+# Download the archive.
+# Unzip.
+# Overwrite `data` and `raw` in `~/.dwarffortress` with the downloaded ones.
+
+#1 Hot Keys
+![stonesense|media/dwarf-fortress-stonesense.png]
+Most keys are shown on the sidebar but it's good to call them out here.
+
+- `tab` to change the screen layout
+- `mouse wheel scroll` to zoom layout in and out
+- `space` to pause and resume
+- `k` to use arrow keys to look around
+- `arrow keys` move cursor
+- `<` move up one layer up and `>` move down one layer. *dwarf fortress is a 2D representation of 3D game*
+- `F1` center on embark point
+- `d` desgination i.e. pick job to do
+- `enter` to start selection of area of designaion and enter again to close selection
+- `-/+` navigating between links
+- `~` DFHack if you have it installed
