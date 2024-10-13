@@ -8,15 +8,19 @@ isportal: true
 #1 Game Dev History
 This is a look at how game development changed over time (as I've studied it). Each game here may have an Archlinux package (AUX as well)
 
-#2 Spacewar (1962)
+#2 Spacewar! (1962)
 Considered one of the earliest digital video games, it pitted two spaceships against each other in a gravitational field setting the stage for future multiplayer gaming experiences.
+
+![spacewar on a CRT monitor |https://cdn.arstechnica.net/wp-content/uploads/2011/10/spacewar_-4ea4ffe-intro.jpg]
 
 #3 Packages
 # spacewar
 
-#2 Colosal Cave Adventure (1976)
+#2 Colossal Cave Adventure (1976)
 One of the first text based games. Also known as Adventure (not to be confused with Atari's graphical version), this text-based adventure game laid the foundation for interactive fiction and exploration-based gameplay.
 This was written by the original author to be played by his daughter and was influenced by DnD.
+
+![terminal screen with text adventure displayed|https://www.giantbomb.com/a/uploads/scale_medium/1/13157/1373171-colossal.png]
 
 #3 Packages
 # open-adventure
@@ -24,6 +28,8 @@ This was written by the original author to be played by his daughter and was inf
 
 #2 Zork (1977)
 One of the first commercially available text based adventures by Infocom,. It popularized interactive fiction and set a benchmark for storytelling and puzzle-solving in games.
+
+![zork text adventure screen|https://playold.games/wp-content/uploads/2021/04/Zork-Trilogy-Fighting-the-mysterious-hooded-figur.jpg]
 
 #3 Packages
 # zork1
@@ -33,11 +39,15 @@ One of the first commercially available text based adventures by Infocom,. It po
 #2 MUD (Multi-User Dungeon) (1978)
 It expanded the concept of multiplayer text-based gaming, pioneering the genre of online multiplayer games and player interaction in virtual worlds.
 
+![tintin++|https://ucarecdn.com/4d02b054-de98-4e83-b36b-c1a417058ac3/-/format/auto/-/progressive/yes/-/preview/480x480/]
+
 #3 Packages
 # gnome-mud
 
 #2 Adventure (1979)
-It was released for the Atari 2600 console. It was influential for being one of the first action-adventure video games, featuring a player-controlled character navigating mazes, solving puzzles, and defeating enemies. Adventure introduced concepts such as inventory management, hidden secrets, and non-linear gameplay, paving the way for future adventure games and influencing game designers in the years to come.
+It was released for the Atari 2600 console based on Colossal Cave Adventure. It was influential for being one of the first action-adventure video games, featuring a player-controlled character navigating mazes, solving puzzles, and defeating enemies. Adventure introduced concepts such as inventory management, hidden secrets, and non-linear gameplay, paving the way for future adventure games and influencing game designers in the years to come.
+
+![adventure gameplay|https://1.bp.blogspot.com/-k3yZIQY-Bcc/XbItzNra8-I/AAAAAAAAOfk/Vtn49oUsXSkpH9gPov0aXLWONBfGEu1GACLcBGAsYHQ/s1600/Adventure%2BSetting%2BOut.gif]
 
 #3 Packages
 # atari-adventure
@@ -45,11 +55,15 @@ It was released for the Atari 2600 console. It was influential for being one of 
 #2 Rogue (1980)
 Rogue introduced procedural dungeon generation and permadeath mechanics, laying the groundwork for the roguelike genre known for its challenging gameplay and randomization.
 
+![rogue in a terminal|https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Rogue_Screenshot.png/440px-Rogue_Screenshot.png]
+
 #3 Packages
 # rogue
 
 #2 Doom (1993)
 It revolutionized the first-person shooter genre with its fast-paced gameplay, immersive 3D graphics, and popularization of multiplayer deathmatch, setting new standards for FPS games.
+
+![doom guy vs demons|http://tinfoil.media/i/010018900DD00000/0/0/6f83a4e7050ca8950794e541b37704b2baa5fac2752fa616f31356c765a1e91a]
 
 #3 Packages
 # doom
@@ -57,12 +71,15 @@ It revolutionized the first-person shooter genre with its fast-paced gameplay, i
 
 #2 More Resources
 # [MUD Timeline|https://www.raphkoster.com/gaming/mudtimeline.shtml]
-# [The Entire History of Video Games|https://www.youtube.com/watch?v=argpSxB1NQE]
-# [The Entire History of RPGs|https://www.youtube.com/watch?v=8o3i10OuMFQ&t=6778s]
+
+#3 The Entire History of Video Games
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/argpSxB1NQE?si=DZ9jOnQwvsGpwkE1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+#3 The Entire History of RPGs
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8o3i10OuMFQ?si=bd_oHJHon2ZLNlKc&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 #2 Honorable Mentions
 # Donkey Kong (one of the first platformers)
 # Ultima Online (one of the first if not the first MMORPGs)
 # EverQuest (brought 3D graphics to MMORPGs)
 # Runespace (a browser based MMORPG that made them accessible)
-
