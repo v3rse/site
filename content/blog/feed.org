@@ -1,5 +1,0 @@
-#+TITLE: Nana Adane's Blog
-
-- [[file:index.org][Blog]]
-- [[file:2026-02-01-opencode.org][OpenCode]]
-- [[file:first-post.org][First Post]]

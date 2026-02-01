@@ -26,7 +26,7 @@
       org-html-preamble (v3rse/get-content "./header.html")
       org-html-postamble (v3rse/get-content "./footer.html"))
 
-;; Simple sitemap formatter 
+;; Simple sitemap formatter for blog index
 (defun v3rse/blog-sitemap-format (entry style project)
   "Format sitemap ENTRY for the blog."
   (format "%s - [[file:%s][%s]]"
@@ -34,6 +34,8 @@
                               (org-publish-find-date entry project))
           entry
           (org-publish-find-title entry project)))
+
+
 
 ;; Project Configuration
 (setq org-publish-project-alist
@@ -69,20 +71,8 @@
              :sitemap-sort-files 'anti-chronologically
              :sitemap-format-entry 'v3rse/blog-sitemap-format)
 
-       ;; 3. RSS Feed
-       (list "rss"
-             :base-directory "./content/blog"
-             :base-extension "org"
-             :publishing-directory "./public"
-             :publishing-function 'org-rss-publish-to-rss
-             :rss-extension "xml"
-             :html-link-home "https://www.nanaadane.com"
-             :html-link-use-abs-url t
-             :auto-sitemap t
-             :sitemap-filename "feed.org"
-             :sitemap-title "Nana Adane's Blog"
-             :sitemap-style 'list
-             :sitemap-sort-files 'anti-chronologically)
+       ;; 3. RSS Feed - Note: We generate this manually in generate-rss.el
+       ;; No longer using ox-rss sitemap approach
 
        ;; 4. Assets
        (list "static"
@@ -97,7 +87,11 @@
              :publishing-directory "./public/media"
              :publishing-function 'org-publish-attachment)
 
-       (list "site" :components '("pages" "blog" "rss" "static" "media"))))
+       (list "site" :components '("pages" "blog" "static" "media"))))
 
 (org-publish-all t)
+
+;; Generate RSS feed manually
+(load-file "./generate-rss.el")
+
 (message "Build complete!")
