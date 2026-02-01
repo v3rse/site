@@ -30,17 +30,18 @@ a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--b
 a:hover { color: var(--link-hover); border-bottom-style: solid; }
 
 /* Header & Nav */
-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
 header .logo { 
   font-family: 'Press Start 2P', monospace;
   font-weight: 400; 
-  font-size: 1rem; 
+  font-size: 1.1rem; 
   color: var(--link); 
   border: none; 
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-shadow: 3px 3px 0 var(--border);
   transition: all 0.2s;
-  line-height: 1.4;
+  line-height: 1.6;
+  padding: 0.5rem 0;
 }
 header .logo:hover { 
   color: var(--link-hover); 
