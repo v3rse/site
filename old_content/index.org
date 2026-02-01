@@ -1,0 +1,8 @@
+#+title: index
+#+description: this is my small corner of the universe
+
+this is my small corner of the universe
+
+** recent
+#+INCLUDE: "./meta.org" :lines "2-12"
+
