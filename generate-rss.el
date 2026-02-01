@@ -15,6 +15,13 @@
         (with-temp-buffer
           (insert-file-contents file)
           (org-mode)
+          (goto-char (point-min))
+          
+          ;; Skip all metadata (#+TITLE, #+DATE, #+CAPTION, etc.)
+          (while (or (looking-at "^#\\+")
+                    (looking-at "^[ \t]*$"))
+            (forward-line 1))
+          
           (let* ((title (or (car (plist-get (org-export-get-environment) :title))
                            (file-name-base file)))
                  (date (or (org-publish-find-date file nil)
@@ -22,13 +29,64 @@
                  (link (concat "https://www.nanaadane.com/blog/"
                               (file-name-sans-extension (file-name-nondirectory file))
                               ".html"))
-                 (content (buffer-substring-no-properties
-                          (point-min)
-                          (min (+ (point-min) 500) (point-max)))))
+                 ;; Extract first meaningful text content
+                 (raw-content
+                  (save-excursion
+                    (let ((content "")
+                          (found nil)
+                          (max-search 50))  ; Search through up to 50 lines
+                      ;; Look through content until we find a paragraph
+                      (while (and (not found) (not (eobp)) (> max-search 0))
+                        (setq max-search (1- max-search))
+                        (cond
+                         ;; Skip headings but continue
+                         ((looking-at "^\\*+ ")
+                          (forward-line 1))
+                         ;; Skip properties drawers
+                         ((looking-at "^[ \t]*:PROPERTIES:")
+                          (or (re-search-forward "^[ \t]*:END:" nil t)
+                              (forward-line 1))
+                          (forward-line 1))
+                         ;; Skip blank lines
+                         ((looking-at "^[ \t]*$")
+                          (forward-line 1))
+                         ;; Skip code blocks
+                         ((looking-at "^[ \t]*#\\+BEGIN")
+                          (or (re-search-forward "^[ \t]*#\\+END" nil t)
+                              (forward-line 1))
+                          (forward-line 1))
+                         ;; Skip other org directives and links
+                         ((or (looking-at "^[ \t]*#\\+")
+                              (looking-at "^[ \t]*\\[\\["))
+                          (forward-line 1))
+                         ;; Found actual content!
+                         (t
+                          (let ((start (point))
+                                (end (save-excursion
+                                       (or (and (re-search-forward "^\\*\\|^[ \t]*#\\+\\|^[ \t]*:" nil t)
+                                               (match-beginning 0))
+                                           (point-max)))))
+                            (setq content (buffer-substring-no-properties start end)
+                                  found t)))))
+                      content)))
+                 ;; Clean up org syntax
+                 (clean-content (replace-regexp-in-string
+                                "\\[\\[.*?\\]\\[\\(.*?\\)\\]\\]" "\\1"  ; Links with text
+                                (replace-regexp-in-string
+                                 "\\[\\[.*?\\]\\]" ""  ; Image/file links without text
+                                 (replace-regexp-in-string
+                                  "~\\([^~]+\\)~" "\\1"  ; Inline code
+                                  (replace-regexp-in-string
+                                   "=\\([^=]+\\)=" "\\1"  ; Verbatim
+                                   (replace-regexp-in-string
+                                    "\\*\\([^*\n]+\\)\\*" "\\1"  ; Bold
+                                    (replace-regexp-in-string
+                                     "/\\([^/\n]+\\)/" "\\1"  ; Italic
+                                     raw-content))))))))
             (push (list :title (format "%s" title)
                        :date date
                        :link link
-                       :content content)
+                       :content (string-trim clean-content))
                   posts)))))
     
     ;; Sort by date
@@ -59,9 +117,10 @@
         (insert (format "    <pubDate>%s</pubDate>\n"
                        (format-time-string "%a, %d %b %Y %H:%M:%S %z"
                                           (plist-get post :date))))
-        (insert (format "    <description><![CDATA[%s...]]></description>\n"
-                       (substring (plist-get post :content) 0
-                                 (min 200 (length (plist-get post :content))))))
+        (let ((desc (plist-get post :content)))
+          (when (> (length desc) 200)
+            (setq desc (concat (substring desc 0 200) "...")))
+          (insert (format "    <description><![CDATA[%s]]></description>\n" desc)))
         (insert "  </item>\n"))
       
       (insert "</channel>\n")
