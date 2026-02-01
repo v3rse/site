@@ -31,7 +31,20 @@ a:hover { color: var(--link-hover); border-bottom-style: solid; }
 
 /* Header & Nav */
 header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
-header .logo { font-weight: 700; font-size: 1.2rem; color: #fff; border: none; }
+header .logo { 
+  font-weight: 700; 
+  font-size: 1.5rem; 
+  color: var(--link); 
+  border: none; 
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0 var(--border);
+  transition: all 0.2s;
+}
+header .logo:hover { 
+  color: var(--link-hover); 
+  text-shadow: 3px 3px 0 var(--border);
+  transform: translateY(-1px);
+}
 nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
 nav a { color: var(--dim); border: none; }
 nav a:hover { color: var(--fg); }
