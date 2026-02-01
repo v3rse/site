@@ -1,13 +1,15 @@
 /* Opencode TUI Theme */
 :root {
-  --bg: #111;
+  --bg: #131010;
   --fg: #eee;
-  --link: #a6e22e; /* Green */
-  --link-hover: #f92672; /* Pink */
+  --card-bg: #1E1A1A;
+  --border: #3D3838;
+  --link: #d4a574; /* Warm orange/brown accent */
+  --link-hover: #e8b889;
   --dim: #888;
-  --code-bg: #222;
-  --font-main: 'ET Book', 'Bembo', 'Georgia', serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --code-bg: #1E1A1A;
+  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
 }
 
 body {
@@ -23,12 +25,12 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 { font-family: var(--font-mono); font-weight: 700; margin-top: 2.5rem; color: #fff; }
-h1 { font-size: 2rem; border-bottom: 2px solid var(--code-bg); padding-bottom: 0.5rem; margin-top: 0; }
-a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--dim); transition: 0.2s; }
+h1 { font-size: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-top: 0; }
+a { color: var(--link); text-decoration: none; border-bottom: 1px dotted var(--border); transition: 0.2s; }
 a:hover { color: var(--link-hover); border-bottom-style: solid; }
 
 /* Header & Nav */
-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--code-bg); padding-bottom: 1rem; }
+header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 header .logo { font-weight: 700; font-size: 1.2rem; color: #fff; border: none; }
 nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
 nav a { color: var(--dim); border: none; }
@@ -46,4 +48,4 @@ blockquote { border-left: 4px solid var(--link); margin: 1.5rem 0; padding-left:
 .archive-date { color: var(--dim); font-size: 0.85em; min-width: 110px; font-variant-numeric: tabular-nums; }
 
 /* Footer */
-footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--code-bg); font-size: 0.9rem; color: var(--dim); text-align: center; font-family: var(--font-mono); }
+footer { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--dim); text-align: center; font-family: var(--font-mono); }

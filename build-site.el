@@ -22,7 +22,7 @@
       org-html-head-include-scripts nil
       org-html-head-include-default-style nil
       org-html-head "<link rel=\"stylesheet\" href=\"/links/style.css\"/>
-                     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=ET+Book:wght@400;700&display=swap\"/>"
+                     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap\"/>"
       org-html-preamble (v3rse/get-content "./header.html")
       org-html-postamble (v3rse/get-content "./footer.html"))
 

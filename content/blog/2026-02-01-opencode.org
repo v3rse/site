@@ -41,3 +41,15 @@ You'll need to run ~systemctl daemon-reload~ to apply the changes
 :PUBDATE:  2026-02-01 Sun 04:23
 :END:
 [[https://opencode.ai/docs/ecosystem/][Ecosystem | OpenCode]]
+
+#+begin_src javascript
+  function main(args) {
+      if (args) {
+  	for (v in args){
+  	    console.log(v)
+  	}
+      }
+  }
+
+  main()
+#+end_src
