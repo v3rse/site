@@ -1,8 +1,8 @@
 #+TITLE: Blog
 
 - [[file:2026-02-01-opencode.org][OpenCode]] - 2026-02-01
-- [[file:first-post.org][First Post]] - 2025-10-05
-- [[file:test.org][Test Post]] - 2024-01-10
+- [[file:2026-02-01-org-personal-site.org][Building a Frictionless Publishing System with Emacs]] - 2026-02-01
 - [[file:dwarf-fortress.org][dwarf-fortress]] - 2023-12-21
 - [[file:binder-wiki.org][binder wiki engine]] - 2022-05-19
+- [[file:binder.org][binder]] - 2022-01-22
 - [[file:in-the-beginning.org][In the beginning..]] - 2014-09-25

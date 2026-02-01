@@ -1,0 +1,16 @@
+#+TITLE: binder
+#+DATE: [2022-01-22 04:53:00]
+
+In an attempt to get over a case of [[https://twitter.com/NanaOAdane/status/1484731437265920004?s=20][coder's block]], I built myself a static generator. It's called *binder*. /It's what generated what you're reading now./
+
+It was inpired by stuff others have built like [[https://github.com/XXIIVV/oscean][oscean]] is used to generate [[https://wiki.xxiivv.com][the XXIIVV wiki]] and a similar [[https:github.com/hundredrabbits/100r.co][tool]] used to generate the [[http://100r.co][Hundredrabbits' site]]. It aims to be a [[https://en.wikipedia.org/wiki/Memex][memex]] (memory extension) or wiki generator as the former example is.
+
+It is something I had wanted to build for a while now. It was really fun building out a parser for a markup language, inspired to markdown, called ~bndr~. The language spec can be [[https://github.com/v3rse/binder#bndr-markup][found here]]
+
+I look forward to write a lot more using this tool while also refining its functionality over time. It has replaced the use of [[https://hexo.io][hexo]] on this site and is aimed at being very simple.
+
+You can find *binder* [[https://github.com/v3rse/binder][here]]
+
+/Disclaimer: it's not fit for human consumption. don't use it!/
+
+*Happy Coding*

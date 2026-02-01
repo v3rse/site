@@ -1,0 +1,138 @@
+#+TITLE: Building a Frictionless Publishing System with Emacs
+#+DATE: [2026-02-01 Sun]
+#+TAGS: emacs, org-mode, web, tools
+
+I rebuilt my personal site from scratch, and this time I did it right. No static site generator to install, no Ruby dependencies to manage, no build scripts scattered across my system. Just Emacs, org-mode, and a custom package I built to tie it all together.
+
+** The Problem with Static Site Generators
+
+I've used Jekyll, Hugo, and a custom Node.js setup over the years. They all had the same issues:
+
+- *Friction*: Want to write a post? First install Ruby/Go/Node, then remember the CLI commands, then figure out why the build broke
+- *Complexity*: Hundreds of dependencies, themes with thousands of lines of template code, configuration files in three different formats
+- *Distance*: Writing happens in one tool (my editor), building in another (terminal), previewing in a third (browser)
+
+The barrier between "I have a thought" and "it's published" was too high. So I stopped writing.
+
+** The Emacs Way
+
+I already write everything in Emacs. My notes, my code, my journal - all in org-mode. Why not my blog?
+
+Org-mode has =ox-publish=, a built-in static site generator. It works, but it's bare bones. No theming, no RSS, no live preview. You write some Emacs Lisp to configure it, run a command, and hope it works.
+
+I wanted something better: a complete publishing system that lives entirely in Emacs.
+
+** org-personal-site
+
+So I built =org-personal-site=, an Emacs package that handles everything:
+
+*** What It Does
+
+- *Builds sites* from org-mode files using =ox-publish=
+- *Generates CSS* from theme configuration (no editing CSS files)
+- *Creates RSS feeds* automatically
+- *Provides live preview* with file watching and auto-rebuild
+- *Deploys to GitHub Pages* with one command
+- *Handles images* with helper commands
+- *Never modifies source files* - everything generated to output directory
+
+*** The Workflow
+
+Writing a post:
+
+#+BEGIN_SRC elisp
+;; Create new post
+M-x org-personal-site-new-post RET "My Post Title" RET
+
+;; Write in org-mode
+;; ... edit ...
+
+;; Preview with live reload
+M-x org-personal-site-preview
+
+;; Deploy to GitHub Pages
+M-x org-personal-site-deploy
+#+END_SRC
+
+That's it. No terminal, no separate build commands, no deployment scripts.
+
+*** Design Decisions
+
+*In-memory template generation*: CSS, HTML headers, and RSS feeds are generated from configuration at build time. No template files to edit, no CSS to maintain separately.
+
+*Post-processing over preprocessing*: Instead of modifying source org files (messy, error-prone), the package post-processes generated HTML. For example, the "Recent Posts" section on the homepage is injected into the HTML after org-publish runs.
+
+*Git over Magit*: Direct =git= commands instead of Magit library functions. More portable, no version-specific API dependencies.
+
+*Theme constraints*: Only three colors (background, foreground, accent). This forces thoughtful design and keeps the site cohesive.
+
+*No source modification*: Your org files stay pristine. No generated content, no temporary files, no backups in your source directory.
+
+** The Stack
+
+- *Format*: Org-mode
+- *Generator*: Custom Emacs package (~1100 lines of Elisp)
+- *Theme*: Opencode TUI (terminal-inspired, warm colors)
+- *Fonts*: Pixelify Sans (logo), JetBrains Mono (headings), Iosevka Etoile (body)
+- *Hosting*: GitHub Pages
+- *Deployment*: Git
+
+Total dependencies: Emacs, git, Python (for preview server). That's it.
+
+** Why This Matters
+
+This isn't just about having a blog. It's about removing friction from the creative process.
+
+When the distance between thought and published post is small enough, you write more. When the tools get out of your way, you focus on ideas instead of build systems.
+
+Personal websites should be:
+- *Yours* - Full control, no platform constraints
+- *Simple* - Fast to load, easy to maintain
+- *Timeless* - Plain text and HTML that will work for decades
+- *Living* - A garden to tend, not a monument to build once
+
+This system gets me closer to that ideal.
+
+** Try It
+
+The package is available at [[https://github.com/v3rse/org-personal-site][github.com/v3rse/org-personal-site]].
+
+It's opinionated - designed for personal blogs, not general-purpose sites. But if you already use Emacs and org-mode, it might be exactly what you need.
+
+#+BEGIN_SRC elisp
+(use-package org-personal-site
+  :vc (:fetcher github :repo "v3rse/org-personal-site")
+  :custom
+  (org-personal-site-source-dir "~/org/my-blog")
+  (org-personal-site-output-dir "~/username.github.io")
+  (org-personal-site-name "My Site")
+  (org-personal-site-author "Your Name"))
+#+END_SRC
+
+** What's Next
+
+Some ideas I'm considering:
+
+- Tag support in the blog index
+- Draft preview mode
+- Export to other formats (PDF, ePub)
+- Image optimization
+- Multi-language support
+
+But honestly? The current system does everything I need. Sometimes "done" is good enough.
+
+** Inspiration
+
+This project was inspired by:
+- [[https://wiki.xxiivv.com/][XXIIVV]] by Devine Lu Linvega - for terminal aesthetics and personal wikis as living documents
+- [[https://100r.co/][100 Rabbits]] - for minimalism and self-hosted tools
+- [[https://gwern.net/][Gwern.net]] - for treating a personal site as an evolving knowledge base
+- The [[https://emacs.org/][Emacs]] community - for showing that Emacs can do everything
+
+** Conclusion
+
+Building your own tools is worth it. Not because the result is better than off-the-shelf solutions, but because you understand every part of it. When something breaks, you can fix it. When you want a feature, you can add it.
+
+This site is now exactly what I want it to be. And writing this post took three minutes from thought to publish.
+
+That's the whole point.
