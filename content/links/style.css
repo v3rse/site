@@ -34,7 +34,7 @@ header { display: flex; justify-content: space-between; align-items: center; mar
 header .logo { 
   font-family: 'Pixelify Sans', monospace;
   font-weight: 600; 
-  font-size: 1.4rem; 
+  font-size: 2rem; 
   color: var(--link); 
   border: none; 
   letter-spacing: 0.05em;
@@ -42,6 +42,7 @@ header .logo {
   transition: all 0.2s;
   line-height: 1.4;
   padding: 0.25rem 0;
+  text-transform: lowercase;
 }
 header .logo:hover { 
   color: var(--link-hover); 
