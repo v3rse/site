@@ -1,0 +1,27 @@
+#+TITLE: OpenCode
+#+DATE: <2026-02-01 Sun>
+
+#+CAPTION: OpenCode in Action
+[[https://opencode.ai/docs/_astro/screenshot.CQjBbRyJ_1dLadc.webp]]
+
+* Setup Gemini when you have Google AI Plus/Ultra subscription
+Note: you don't get Gemini API keys with your Google AI subscription but you do get more usage credits when you use Gemini CLI and Antigravity.
+
+But you use this OpenCode plugin to use you subscription: [[https://github.com/jenslys/opencode-gemini-auth][jenslys/opencode-gemini-auth: Gemini auth plugin for opencode]]
+
+* Setup Docker MCP
+[[https://docs.docker.com/ai/mcp-catalog-and-toolkit/get-started/#opencode][Verify MCP - OpenCode]]
+use ~opencode run ...~ instead of the command use in the instructions
+
+* Ollama Support
+Seems like you can setup OpenCode to use Ollama:
+[[https://docs.ollama.com/integrations/opencode][OpenCode - Ollama]]
+
+Simple as ~ollama launch opencode~ and then you pick the models you want.
+You may need to increase the ollama context window size since OpenCode needs that:
+[[https://docs.ollama.com/context-length][Context length - Ollama]]
+This can be added to [[file:/usr/lib/systemd/system/ollama.service::Environment="OLLAMA_CONTEXT_LENGTH=64000"][/usr/lib/systemd/system/ollama.service]] as an ~Environment~ entry
+You'll need to run ~systemctl daemon-reload~ to apply the changes
+
+* More Plugins
+[[https://opencode.ai/docs/ecosystem/][Ecosystem | OpenCode]]

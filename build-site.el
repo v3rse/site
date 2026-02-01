@@ -26,18 +26,14 @@
       org-html-preamble (v3rse/get-content "./header.html")
       org-html-postamble (v3rse/get-content "./footer.html"))
 
-;; Sitemap Function (Chronological Blog Feed)
-(defun v3rse/blog-sitemap-format-entry (entry style project)
-  "Format a blog entry for the sitemap."
-  (let ((title (org-publish-find-title entry project))
-        (date (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))))
-    (format "@@html:<div class=\"archive-item\"><span class=\"archive-date\">%s</span> <a href=\"%s\">%s</a></div>@@"
-            date entry title)))
-
-(defun v3rse/blog-sitemap-function (title list)
-  "Generate the sitemap (Blog Index)."
-  (concat "#+TITLE: Blog\n\n"
-          (org-list-to-org list)))
+;; Simple sitemap formatter 
+(defun v3rse/blog-sitemap-format (entry style project)
+  "Format sitemap ENTRY for the blog."
+  (format "%s - [[file:%s][%s]]"
+          (format-time-string "%Y-%m-%d"
+                              (org-publish-find-date entry project))
+          entry
+          (org-publish-find-title entry project)))
 
 ;; Project Configuration
 (setq org-publish-project-alist
@@ -59,6 +55,7 @@
        (list "blog"
              :base-directory "./content/blog"
              :base-extension "org"
+             :exclude "feed.org\\|index.org"
              :publishing-directory "./public/blog"
              :publishing-function 'org-html-publish-to-html
              :with-author nil
@@ -70,8 +67,7 @@
              :sitemap-filename "index.org"
              :sitemap-title "Blog"
              :sitemap-sort-files 'anti-chronologically
-             :sitemap-format-entry 'v3rse/blog-sitemap-format-entry
-             :sitemap-function 'v3rse/blog-sitemap-function)
+             :sitemap-format-entry 'v3rse/blog-sitemap-format)
 
        ;; 3. RSS Feed
        (list "rss"

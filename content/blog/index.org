@@ -1,4 +1,3 @@
 #+TITLE: Blog
 
-- 
-- 
+- 2025-10-05 - [[file:first-post.org][First Post]]
