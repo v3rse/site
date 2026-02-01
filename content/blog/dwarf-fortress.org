@@ -6,7 +6,7 @@ Dwarf Fortress is game with old looking ASCII graphics, procedurally generated w
 
 * Changing the tileset
 #+CAPTION: dwarf fortress with Wanderlust tile set
-[[file:media/dwarf-fortress.png]]
+[[file:../media/dwarf-fortress.png]]
 
 The original tileset hurts my eyes so I switched to [[http://www.bay12forums.com/smf/index.php?topic~145362.0][Wanderlust]]
 
@@ -17,7 +17,7 @@ Steps:
 
 ** Hot Keys
 #+CAPTION: stonesense
-[[file:media/dwarf-fortress-stonesense.png]]
+[[file:../media/dwarf-fortress-stonesense.png]]
 
 Most keys are shown on the sidebar but it's good to call them out here.
 
