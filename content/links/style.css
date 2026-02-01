@@ -32,16 +32,16 @@ a:hover { color: var(--link-hover); border-bottom-style: solid; }
 /* Header & Nav */
 header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; font-family: var(--font-mono); border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
 header .logo { 
-  font-family: 'Press Start 2P', monospace;
-  font-weight: 400; 
-  font-size: 1.1rem; 
+  font-family: 'Pixelify Sans', monospace;
+  font-weight: 600; 
+  font-size: 1.4rem; 
   color: var(--link); 
   border: none; 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   text-shadow: 3px 3px 0 var(--border);
   transition: all 0.2s;
-  line-height: 1.6;
-  padding: 0.5rem 0;
+  line-height: 1.4;
+  padding: 0.25rem 0;
 }
 header .logo:hover { 
   color: var(--link-hover); 
