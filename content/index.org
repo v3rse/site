@@ -3,8 +3,20 @@
 
 Hi, I'm Nana Adane.
 
-I am a software engineer and writer. I like building things and sharing what I learn.
+I am a software engineer and writer. This is my small corner of the universe. I like building things and sharing what I learn.
 
-* Recent Work
-Check out my [[file:projects.org][Projects]] or read my [[file:blog/index.org][Blog]].
+* Recent Writing
+
+#+BEGIN: recent-blogs :maxitems 5
+- 2026-02-01 - [[file:blog/test.org][Untitled]]
+- 2026-02-01 - [[file:blog/in-the-beginning.org][In the beginning..]]
+- 2026-02-01 - [[file:blog/dwarf-fortress.org][dwarf-fortress]]
+- 2026-02-01 - [[file:blog/binder-wiki.org][binder wiki engine]]
+- 2026-02-01 - [[file:blog/2026-02-01-opencode.org][OpenCode]]
+#+END:
+
+[[file:blog/index.org][View all posts →]]
+
+* Projects
+Check out my [[file:projects.org][Projects]].
 

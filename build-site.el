@@ -37,6 +37,48 @@
           entry
           (org-publish-find-title entry project)))
 
+;; Dynamic block for recent blogs on index page
+(defun org-dblock-write:recent-blogs (params)
+  "Generate a list of recent blog posts."
+  (let* ((maxitems (or (plist-get params :maxitems) 5))
+         (blog-dir "./content/blog/")
+         (blog-files (directory-files blog-dir t "\\.org$"))
+         (posts '()))
+    
+    ;; Collect blog posts with dates
+    (dolist (file blog-files)
+      (unless (string-match-p "\\(index\\|rss\\|feed\\)\\.org$" file)
+        (with-temp-buffer
+          (insert-file-contents file)
+          (goto-char (point-min))
+          (let* ((title "Untitled")
+                 (date (current-time)))
+            ;; Extract title
+            (when (re-search-forward "^#\\+TITLE: \\(.+\\)$" nil t)
+              (setq title (match-string 1)))
+            ;; Extract date
+            (goto-char (point-min))
+            (when (re-search-forward "^#\\+DATE: <\\([^>]+\\)>" nil t)
+              (setq date (org-parse-time-string (match-string 1))))
+            (push (list :date (apply 'encode-time date)
+                       :title title
+                       :link (concat "blog/" (file-name-nondirectory file)))
+                  posts)))))
+    
+    ;; Sort by date and take maxitems
+    (setq posts (seq-take 
+                 (sort posts (lambda (a b) 
+                              (time-less-p (plist-get b :date) 
+                                          (plist-get a :date))))
+                 maxitems))
+    
+    ;; Insert the list
+    (dolist (post posts)
+      (insert (format "- %s - [[file:%s][%s]]\n"
+                     (format-time-string "%Y-%m-%d" (plist-get post :date))
+                     (plist-get post :link)
+                     (plist-get post :title))))))
+
 
 
 ;; Project Configuration
@@ -96,6 +138,53 @@
              :publishing-function 'org-publish-attachment)
 
        (list "site" :components '("pages" "blog" "static" "media" "favicon"))))
+
+;; Generate recent blog list for index page
+(let* ((blog-dir "./content/blog/")
+       (blog-files (directory-files blog-dir t "\\.org$"))
+       (posts '())
+       (recent-list ""))
+  
+  ;; Collect blog posts
+  (dolist (file blog-files)
+    (unless (string-match-p "\\(index\\|rss\\|feed\\)\\.org$" file)
+      (with-temp-buffer
+        (insert-file-contents file)
+        (goto-char (point-min))
+        (let ((title "Untitled")
+              (date (current-time)))
+          (when (re-search-forward "^#\\+TITLE: \\(.+\\)$" nil t)
+            (setq title (match-string 1)))
+          (goto-char (point-min))
+          (when (re-search-forward "^#\\+DATE: <\\([^>]+\\)>" nil t)
+            (condition-case nil
+                (setq date (apply 'encode-time (org-parse-time-string (match-string 1))))
+              (error nil)))
+          (push (list date title (file-name-nondirectory file)) posts)))))
+  
+  ;; Sort and take top 5
+  (setq posts (seq-take (sort posts (lambda (a b) (time-less-p (nth 0 b) (nth 0 a)))) 5))
+  
+  ;; Build list string
+  (dolist (post posts)
+    (setq recent-list 
+          (concat recent-list
+                  (format "- %s - [[file:blog/%s][%s]]\n"
+                         (format-time-string "%Y-%m-%d" (nth 0 post))
+                         (nth 2 post)
+                         (nth 1 post)))))
+  
+  ;; Update index.org
+  (with-temp-file "./content/index.org"
+    (insert-file-contents "./content/index.org")
+    (goto-char (point-min))
+    (when (re-search-forward "^#\\+BEGIN: recent-blogs.*$" nil t)
+      (forward-line 1)
+      (let ((start (point)))
+        (re-search-forward "^#\\+END:" nil t)
+        (beginning-of-line)
+        (delete-region start (point)))
+      (insert recent-list))))
 
 (org-publish-all t)
 
