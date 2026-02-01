@@ -57,7 +57,7 @@
        (list "blog"
              :base-directory "./content/blog"
              :base-extension "org"
-             :exclude "feed.org\\|index.org"
+             :exclude "feed.org\\|index.org\\|rss.org"
              :publishing-directory "./public/blog"
              :publishing-function 'org-html-publish-to-html
              :with-author nil

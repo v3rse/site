@@ -1,5 +1,4 @@
 #+TITLE: Blog
 
-- 2026-02-01 - [[file:rss.org][Nana Adane - Blog]]
 - 2026-02-01 - [[file:2026-02-01-opencode.org][OpenCode]]
 - 2025-10-05 - [[file:first-post.org][First Post]]
