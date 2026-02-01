@@ -2,10 +2,11 @@
 #+AUTHOR: Nana Adane
 
 * Current Projects
-** Opencode TUI Theme
-A minimal, text-first theme for hackers.
-- [[https://github.com/nanaadane/opencode][Source Code]]
+** HabitOrg
+More soon
 
 * Past Work
-** Project Alpha
-Description of project alpha.
+** [[https://github.com/v3rse/binder][binder]]
+A build tool for my thoughts. This was a stab at building my own wiki engine/static site generator
+** [[https://github.com/v3rse/days][days]]
+My idea of a simple productivity tool before I discovered org mode

@@ -1,8 +1,10 @@
 #+TITLE: Blog
 
-- 2026-02-01 - [[file:2026-02-01-opencode.org][OpenCode]]
-- 2025-10-05 - [[file:first-post.org][First Post]]
-- 2024-01-10 - [[file:test.org][Test Post]]
-- 2023-12-21 - [[file:dwarf-fortress.org][dwarf-fortress]]
-- 2022-05-19 - [[file:binder-wiki.org][binder wiki engine]]
-- 2014-09-25 - [[file:in-the-beginning.org][In the beginning..]]
+- [[file:2026-02-01-opencode.org][OpenCode]] - 2026-02-01
+- [[file:2026-02-01-useless-tools.org][Useless Tools]] - 2026-02-01
+- [[file:2026-02-01-try-again.org][Try again]] - 2026-02-01
+- [[file:first-post.org][First Post]] - 2025-10-05
+- [[file:test.org][Test Post]] - 2024-01-10
+- [[file:dwarf-fortress.org][dwarf-fortress]] - 2023-12-21
+- [[file:binder-wiki.org][binder wiki engine]] - 2022-05-19
+- [[file:in-the-beginning.org][In the beginning..]] - 2014-09-25
