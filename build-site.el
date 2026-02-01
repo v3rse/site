@@ -23,6 +23,7 @@
       org-html-head-include-default-style nil
       org-html-head "<link rel=\"stylesheet\" href=\"/links/style.css\"/>
                      <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Pixelify+Sans:wght@400;600;700&display=swap\"/>
+                     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka-etoile/iosevka-etoile.min.css\"/>
                      <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"/>"
       org-html-preamble (v3rse/get-content "./header.html")
       org-html-postamble (v3rse/get-content "./footer.html"))
