@@ -1,69 +1,107 @@
-;;; Only need for fixing fontification of code blocks since htmlize >= 1.34 required
+;; build-site.el
 (require 'package)
-
-;; local package directory not global 
 (setq package-user-dir (expand-file-name "./.packages"))
-
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
-
-;; initialize the package system
 (package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+(unless package-archive-contents (package-refresh-contents))
 
-(package-install 'htmlize)
+(unless (package-installed-p 'htmlize) (package-install 'htmlize))
+(unless (package-installed-p 'ox-rss) (package-install 'ox-rss))
 
-;;; Regular programming continues...
 (require 'ox-publish)
+(require 'ox-rss)
 
 (defun v3rse/get-content (x)
-  "get contents of a file as a string"
   (with-temp-buffer
     (insert-file-contents x)
     (buffer-string)))
 
+;; Theme and Headers
 (setq org-html-validation-link nil
       org-html-head-include-scripts nil
       org-html-head-include-default-style nil
-      org-html-head "<link rel=\"stylesheet\" href=\"links/main.css\"/>"
+      org-html-head "<link rel=\"stylesheet\" href=\"/links/style.css\"/>
+                     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=ET+Book:wght@400;700&display=swap\"/>"
       org-html-preamble (v3rse/get-content "./header.html")
       org-html-postamble (v3rse/get-content "./footer.html"))
 
+;; Sitemap Function (Chronological Blog Feed)
+(defun v3rse/blog-sitemap-format-entry (entry style project)
+  "Format a blog entry for the sitemap."
+  (let ((title (org-publish-find-title entry project))
+        (date (format-time-string "%Y-%m-%d" (org-publish-find-date entry project))))
+    (format "@@html:<div class=\"archive-item\"><span class=\"archive-date\">%s</span> <a href=\"%s\">%s</a></div>@@"
+            date entry title)))
+
+(defun v3rse/blog-sitemap-function (title list)
+  "Generate the sitemap (Blog Index)."
+  (concat "#+TITLE: Blog\n\n"
+          (org-list-to-org list)))
+
+;; Project Configuration
 (setq org-publish-project-alist
       (list
+       ;; 1. Pages (Root)
        (list "pages"
-	     :recursive t
-	     :base-directory "./content"
-	     :publishing-directory "./public"
-	     :publishing-function 'org-html-publish-to-html
-	     :creator "Nana Adane © 2025"
-	     :with-author nil
-	     :with-creator t
-	     :with-toc nil
-	     :section-numbers nil
-	     :time-stamp-file nil
-	     :auto-sitemap t
-	     :sitemap-filename "meta.org"
-	     :sitemap-title "Meta"
-	     :sitemap-sort-files 'anti-chronologically)
+             :base-directory "./content"
+             :base-extension "org"
+             :exclude "blog/"
+             :publishing-directory "./public"
+             :publishing-function 'org-html-publish-to-html
+             :with-author nil
+             :with-creator nil
+             :with-toc nil
+             :section-numbers nil
+             :time-stamp-file nil)
+
+       ;; 2. Blog Posts (HTML)
+       (list "blog"
+             :base-directory "./content/blog"
+             :base-extension "org"
+             :publishing-directory "./public/blog"
+             :publishing-function 'org-html-publish-to-html
+             :with-author nil
+             :with-creator nil
+             :with-toc nil
+             :section-numbers nil
+             :time-stamp-file nil
+             :auto-sitemap t
+             :sitemap-filename "index.org"
+             :sitemap-title "Blog"
+             :sitemap-sort-files 'anti-chronologically
+             :sitemap-format-entry 'v3rse/blog-sitemap-format-entry
+             :sitemap-function 'v3rse/blog-sitemap-function)
+
+       ;; 3. RSS Feed
+       (list "rss"
+             :base-directory "./content/blog"
+             :base-extension "org"
+             :publishing-directory "./public"
+             :publishing-function 'org-rss-publish-to-rss
+             :rss-extension "xml"
+             :html-link-home "https://www.nanaadane.com"
+             :html-link-use-abs-url t
+             :auto-sitemap t
+             :sitemap-filename "feed.org"
+             :sitemap-title "Nana Adane's Blog"
+             :sitemap-style 'list
+             :sitemap-sort-files 'anti-chronologically)
+
+       ;; 4. Assets
+       (list "static"
+             :base-directory "./content/links"
+             :base-extension "css\\|js"
+             :publishing-directory "./public/links"
+             :publishing-function 'org-publish-attachment)
+       
        (list "media"
-         :base-directory "./content/media"
-         :base-extension "jpg\\|gif\\|png"
-         :publishing-directory "./public/media"
-         :publishing-function 'org-publish-attachment)
-       (list "links"
-	  :base-directory "./content/links"
-         :base-extension "css\\|js"
-         :publishing-directory "./public/links"
-         :publishing-function 'org-publish-attachment)
-       (list "site"
-	     :components (list "pages" "media" "links"))
-       ))
+             :base-directory "./content/media"
+             :base-extension "png\\|jpg\\|gif"
+             :publishing-directory "./public/media"
+             :publishing-function 'org-publish-attachment)
 
-(copy-file "./content/CNAME" "./public/" t)
+       (list "site" :components '("pages" "blog" "rss" "static" "media"))))
 
-;; regenerate all
 (org-publish-all t)
-
 (message "Build complete!")

@@ -1,0 +1,19 @@
+#!/bin/bash
+TITLE="$1"
+if [ -z "$TITLE" ]; then
+  echo "Usage: ./new-post \"Title of Post\""
+  exit 1
+fi
+
+SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+DATE=$(date +%Y-%m-%d)
+FILENAME="content/blog/${DATE}-${SLUG}.org"
+
+echo "#+TITLE: ${TITLE}" > "$FILENAME"
+echo "#+DATE: <$(date '+%Y-%m-%d %a')>" >> "$FILENAME"
+echo "" >> "$FILENAME"
+echo "Write here..." >> "$FILENAME"
+
+echo "Created $FILENAME"
+# Optional: Open in Emacs
+# emacsclient -c "$FILENAME" &

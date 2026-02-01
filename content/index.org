@@ -1,0 +1,9 @@
+#+TITLE: About Me
+#+AUTHOR: Nana Adane
+
+Hi, I'm Nana Adane.
+
+I am a software engineer and writer. I like building things and sharing what I learn.
+
+* Recent Work
+Check out my [[file:projects.org][Projects]] or read my [[file:blog/index.org][Blog]].

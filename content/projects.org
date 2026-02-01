@@ -1,0 +1,11 @@
+#+TITLE: Projects
+#+AUTHOR: Nana Adane
+
+* Current Projects
+** Opencode TUI Theme
+A minimal, text-first theme for hackers.
+- [[https://github.com/nanaadane/opencode][Source Code]]
+
+* Past Work
+** Project Alpha
+Description of project alpha.

@@ -1,0 +1,10 @@
+#+TITLE: First Post
+#+DATE: <2025-10-05 Sun>
+
+Welcome to my new blog. This is the first post.
+
+Here is some code:
+#+BEGIN_SRC python
+def hello():
+    print("Hello, world!")
+#+END_SRC

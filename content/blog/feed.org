@@ -1,0 +1,4 @@
+#+TITLE: Nana Adane's Blog
+
+- [[file:index.org][Blog]]
+- [[file:first-post.org][First Post]]
